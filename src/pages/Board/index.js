@@ -18,7 +18,7 @@ import {
 import { FontAwesome } from '@expo/vector-icons';
 
 export default function ({ route }) {
-
+  const { singlePlayer } = route.params;
   const [board, setBoard] = useState([
     [
       { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
@@ -76,7 +76,7 @@ export default function ({ route }) {
   }, [board]);
 
   useEffect(() => {
-    if (!gameEnd && player === "Player 2") {
+    if (!gameEnd && player === "Player 2" && singlePlayer) {
       setTimeout(() => cpuMove(board), 500);
     }
   }, [player]);
@@ -469,17 +469,20 @@ export default function ({ route }) {
 
         <Row>
           <Square bg={board[0][0].bg} margin_right="10px" onPress={() => {
-            if (player === "Player 1") updateBoard(0, 0, turn);
+            if (player === "Player 2" && singlePlayer) return;
+            updateBoard(0, 0, turn);
           }}>
             <FontAwesome name={board[0][0].value} size={90} color={board[0][0].color} />
           </Square>
           <Square bg={board[0][1].bg} onPress={() => {
-            if (player === "Player 1") updateBoard(0, 1, turn);
+            if (player === "Player 2" && singlePlayer) return;
+            updateBoard(0, 1, turn);
           }}>
             <FontAwesome name={board[0][1].value} size={90} color={board[0][1].color} />
           </Square>
           <Square bg={board[0][2].bg} margin_left="10px" onPress={() => {
-            if (player === "Player 1") updateBoard(0, 2, turn);
+            if (player === "Player 2" && singlePlayer) return;
+            updateBoard(0, 2, turn);
           }}>
             <FontAwesome name={board[0][2].value} size={90} color={board[0][2].color} />
           </Square>
@@ -487,17 +490,20 @@ export default function ({ route }) {
 
         <Row>
           <Square bg={board[1][0].bg} margin_right="10px" onPress={() => {
-            if (player === "Player 1") updateBoard(1, 0, turn);
+            if (player === "Player 2" && singlePlayer) return;
+            updateBoard(1, 0, turn);
           }}>
             <FontAwesome name={board[1][0].value} size={90} color={board[1][0].color} />
           </Square>
           <Square bg={board[1][1].bg} onPress={() => {
-            if (player === "Player 1") updateBoard(1, 1, turn);
+            if (player === "Player 2" && singlePlayer) return;
+            updateBoard(1, 1, turn);
           }}>
             <FontAwesome name={board[1][1].value} size={90} color={board[1][1].color} />
           </Square>
           <Square bg={board[1][2].bg} margin_left="10px" onPress={() => {
-            if (player === "Player 1") updateBoard(1, 2, turn);
+            if (player === "Player 2" && singlePlayer) return;
+            updateBoard(1, 2, turn);
           }}>
             <FontAwesome name={board[1][2].value} size={90} color={board[1][2].color} />
           </Square>
@@ -505,17 +511,20 @@ export default function ({ route }) {
 
         <Row>
           <Square bg={board[2][0].bg} margin_right="10px" onPress={() => {
-            if (player === "Player 1") updateBoard(2, 0, turn);
+            if (player === "Player 2" && singlePlayer) return;
+            updateBoard(2, 0, turn);
           }}>
             <FontAwesome name={board[2][0].value} size={90} color={board[2][0].color} />
           </Square>
           <Square bg={board[2][1].bg} onPress={() => {
-            if (player === "Player 1") updateBoard(2, 1, turn);
+            if (player === "Player 2" && singlePlayer) return;
+            updateBoard(2, 1, turn);
           }}>
             <FontAwesome name={board[2][1].value} size={90} color={board[2][1].color} />
           </Square>
           <Square bg={board[2][2].bg} margin_left="10px" onPress={() => {
-            if (player === "Player 1") updateBoard(2, 2, turn);
+            if (player === "Player 2" && singlePlayer) return;
+            updateBoard(2, 2, turn);
           }}>
             <FontAwesome name={board[2][2].value} size={90} color={board[2][2].color} />
           </Square>
