@@ -22,19 +22,19 @@ export default function Lobby({ navigation }) {
 
         <Title>Difficult: </Title>
 
-        <Button onPress={() => navigation.navigate('Difficult')} color="rgba(21,255,0,.2)">
+        <Button onPress={() => navigation.navigate('Board')} color="#794ce3">
           <IconContainer>
           <Ionicons name="md-happy-sharp" size={24} color="green" />
           </IconContainer>
           <ButtonText>Easy</ButtonText>
         </Button>
-        <Button onPress={() => navigation.navigate('Difficult')} color="rgba(255,247,0,.2)">
+        <Button onPress={() => navigation.navigate('Board')} color="#794ce3">
           <IconContainer>
           <MaterialCommunityIcons name="emoticon-neutral" size={24} color="yellow" />
           </IconContainer>
           <ButtonText>Hard</ButtonText>
         </Button>
-        <Button onPress={() => navigation.navigate('Difficult')} color="rgba(255,0,0,.2)">
+        <Button onPress={() => navigation.navigate('Board')} color="#794ce3">
           <IconContainer>
           <MaterialCommunityIcons name="emoticon-angry" size={24} color="red" />
           </IconContainer>

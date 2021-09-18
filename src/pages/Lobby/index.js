@@ -21,7 +21,7 @@ export default function Lobby({ navigation }) {
 
         <Title>Lobby: </Title>
 
-        <Button onPress={() => navigation.navigate('Difficult')}>
+        <Button onPress={() => navigation.navigate('Difficult')} color="#794ce3">
           <IconContainer>
             <FontAwesome name="gamepad" size={24} color="white" />
           </IconContainer>
