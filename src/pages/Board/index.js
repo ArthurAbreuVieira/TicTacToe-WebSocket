@@ -62,17 +62,17 @@ export default function () {
 
     // x
     if (row0[0].value === 'close' && row0[1].value === 'close' && row0[2].value === 'close') {
-      setTimeout(()=>{
+      setTimeout(() => {
         const newBoard = [...board];
         newBoard[0][0].bg = 'yellowgreen';
         newBoard[0][0].color = 'white';
         setBoard(newBoard);
-        setTimeout(()=>{
+        setTimeout(() => {
           const newBoard = [...board];
           newBoard[0][1].bg = 'yellowgreen';
           newBoard[0][1].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
             newBoard[0][2].bg = 'yellowgreen';
             newBoard[0][2].color = 'white';
@@ -81,20 +81,18 @@ export default function () {
         }, 300);
       }, 300);
       setGameEnd(true);
-    }
-
-    if (row1[0].value === 'close' && row1[1].value === 'close' && row1[2].value === 'close') {
-      setTimeout(()=>{
+    } else if (row1[0].value === 'close' && row1[1].value === 'close' && row1[2].value === 'close') {
+      setTimeout(() => {
         const newBoard = [...board];
         newBoard[1][0].bg = 'yellowgreen';
         newBoard[1][0].color = 'white';
         setBoard(newBoard);
-        setTimeout(()=>{
+        setTimeout(() => {
           const newBoard = [...board];
           newBoard[1][1].bg = 'yellowgreen';
           newBoard[1][1].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
             newBoard[1][2].bg = 'yellowgreen';
             newBoard[1][2].color = 'white';
@@ -103,20 +101,18 @@ export default function () {
         }, 300);
       }, 300);
       setGameEnd(true);
-    }
-
-    if (row2[0].value === 'close' && row2[1].value === 'close' && row2[2].value === 'close') {
-      setTimeout(()=>{
+    } else if (row2[0].value === 'close' && row2[1].value === 'close' && row2[2].value === 'close') {
+      setTimeout(() => {
         const newBoard = [...board];
         newBoard[2][0].bg = 'yellowgreen';
         newBoard[2][0].color = 'white';
         setBoard(newBoard);
-        setTimeout(()=>{
+        setTimeout(() => {
           const newBoard = [...board];
           newBoard[2][1].bg = 'yellowgreen';
           newBoard[2][1].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
             newBoard[2][2].bg = 'yellowgreen';
             newBoard[2][2].color = 'white';
@@ -125,20 +121,18 @@ export default function () {
         }, 300);
       }, 300);
       setGameEnd(true);
-    }
-
-    if (row0[0].value === 'close' && row1[0].value === 'close' && row2[0].value === 'close') {
-      setTimeout(()=>{
+    } else if (row0[0].value === 'close' && row1[0].value === 'close' && row2[0].value === 'close') {
+      setTimeout(() => {
         const newBoard = [...board];
         newBoard[0][0].bg = 'yellowgreen';
         newBoard[0][0].color = 'white';
         setBoard(newBoard);
-        setTimeout(()=>{
+        setTimeout(() => {
           const newBoard = [...board];
           newBoard[1][0].bg = 'yellowgreen';
           newBoard[1][0].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
             newBoard[2][0].bg = 'yellowgreen';
             newBoard[2][0].color = 'white';
@@ -147,20 +141,18 @@ export default function () {
         }, 300);
       }, 300);
       setGameEnd(true);
-    }
-
-    if (row0[1].value === 'close' && row1[1].value === 'close' && row2[1].value === 'close') {
-      setTimeout(()=>{
+    } else if (row0[1].value === 'close' && row1[1].value === 'close' && row2[1].value === 'close') {
+      setTimeout(() => {
         const newBoard = [...board];
         newBoard[0][1].bg = 'yellowgreen';
         newBoard[0][1].color = 'white';
         setBoard(newBoard);
-        setTimeout(()=>{
+        setTimeout(() => {
           const newBoard = [...board];
           newBoard[1][1].bg = 'yellowgreen';
           newBoard[1][1].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
             newBoard[2][1].bg = 'yellowgreen';
             newBoard[2][1].color = 'white';
@@ -169,20 +161,18 @@ export default function () {
         }, 300);
       }, 300);
       setGameEnd(true);
-    }
-
-    if (row0[2].value === 'close' && row1[2].value === 'close' && row2[2].value === 'close') {
-      setTimeout(()=>{
+    } else if (row0[2].value === 'close' && row1[2].value === 'close' && row2[2].value === 'close') {
+      setTimeout(() => {
         const newBoard = [...board];
         newBoard[0][2].bg = 'yellowgreen';
         newBoard[0][2].color = 'white';
         setBoard(newBoard);
-        setTimeout(()=>{
+        setTimeout(() => {
           const newBoard = [...board];
           newBoard[1][2].bg = 'yellowgreen';
           newBoard[1][2].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
             newBoard[2][2].bg = 'yellowgreen';
             newBoard[2][2].color = 'white';
@@ -191,20 +181,18 @@ export default function () {
         }, 300);
       }, 300);
       setGameEnd(true);
-    }
-
-    if (row0[0].value === 'close' && row1[1].value === 'close' && row2[2].value === 'close') {
-      setTimeout(()=>{
+    } else if (row0[0].value === 'close' && row1[1].value === 'close' && row2[2].value === 'close') {
+      setTimeout(() => {
         const newBoard = [...board];
         newBoard[0][0].bg = 'yellowgreen';
         newBoard[0][0].color = 'white';
         setBoard(newBoard);
-        setTimeout(()=>{
+        setTimeout(() => {
           const newBoard = [...board];
           newBoard[1][1].bg = 'yellowgreen';
           newBoard[1][1].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
             newBoard[2][2].bg = 'yellowgreen';
             newBoard[2][2].color = 'white';
@@ -213,20 +201,18 @@ export default function () {
         }, 300);
       }, 300);
       setGameEnd(true);
-    }
-
-    if (row0[2].value === 'close' && row1[1].value === 'close' && row2[0].value === 'close') {
-      setTimeout(()=>{
+    } else if (row0[2].value === 'close' && row1[1].value === 'close' && row2[0].value === 'close') {
+      setTimeout(() => {
         const newBoard = [...board];
         newBoard[0][2].bg = 'yellowgreen';
         newBoard[0][2].color = 'white';
         setBoard(newBoard);
-        setTimeout(()=>{
+        setTimeout(() => {
           const newBoard = [...board];
           newBoard[1][1].bg = 'yellowgreen';
           newBoard[1][1].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
             newBoard[2][0].bg = 'yellowgreen';
             newBoard[2][0].color = 'white';
@@ -235,184 +221,184 @@ export default function () {
         }, 300);
       }, 300);
       setGameEnd(true);
-    }
-
-    // o
-    if (row0[0].value === 'circle-o' && row0[1].value === 'circle-o' && row0[2].value === 'circle-o') {
-      setTimeout(()=>{
-        const newBoard = [...board];
-        newBoard[0][0].bg = 'yellowgreen';
-        newBoard[0][0].color = 'white';
-        setBoard(newBoard);
-        setTimeout(()=>{
+    } else // o
+      if (row0[0].value === 'circle-o' && row0[1].value === 'circle-o' && row0[2].value === 'circle-o') {
+        setTimeout(() => {
+          const newBoard = [...board];
+          newBoard[0][0].bg = 'yellowgreen';
+          newBoard[0][0].color = 'white';
+          setBoard(newBoard);
+          setTimeout(() => {
+            const newBoard = [...board];
+            newBoard[0][1].bg = 'yellowgreen';
+            newBoard[0][1].color = 'white';
+            setBoard(newBoard);
+            setTimeout(() => {
+              const newBoard = [...board];
+              newBoard[0][2].bg = 'yellowgreen';
+              newBoard[0][2].color = 'white';
+              setBoard(newBoard);
+            }, 300);
+          }, 300);
+        }, 300);
+        setGameEnd(true);
+      } else if (row1[0].value === 'circle-o' && row1[1].value === 'circle-o' && row1[2].value === 'circle-o') {
+        setTimeout(() => {
+          const newBoard = [...board];
+          newBoard[1][0].bg = 'yellowgreen';
+          newBoard[1][0].color = 'white';
+          setBoard(newBoard);
+          setTimeout(() => {
+            const newBoard = [...board];
+            newBoard[1][1].bg = 'yellowgreen';
+            newBoard[1][1].color = 'white';
+            setBoard(newBoard);
+            setTimeout(() => {
+              const newBoard = [...board];
+              newBoard[1][2].bg = 'yellowgreen';
+              newBoard[1][2].color = 'white';
+              setBoard(newBoard);
+            }, 300);
+          }, 300);
+        }, 300);
+        setGameEnd(true);
+      } else if (row2[0].value === 'circle-o' && row2[1].value === 'circle-o' && row2[2].value === 'circle-o') {
+        setTimeout(() => {
+          const newBoard = [...board];
+          newBoard[2][0].bg = 'yellowgreen';
+          newBoard[2][0].color = 'white';
+          setBoard(newBoard);
+          setTimeout(() => {
+            const newBoard = [...board];
+            newBoard[2][1].bg = 'yellowgreen';
+            newBoard[2][1].color = 'white';
+            setBoard(newBoard);
+            setTimeout(() => {
+              const newBoard = [...board];
+              newBoard[2][2].bg = 'yellowgreen';
+              newBoard[2][2].color = 'white';
+              setBoard(newBoard);
+            }, 300);
+          }, 300);
+        }, 300);
+        setGameEnd(true);
+      } else if (row0[0].value === 'circle-o' && row1[0].value === 'circle-o' && row2[0].value === 'circle-o') {
+        setTimeout(() => {
+          const newBoard = [...board];
+          newBoard[0][0].bg = 'yellowgreen';
+          newBoard[0][0].color = 'white';
+          setBoard(newBoard);
+          setTimeout(() => {
+            const newBoard = [...board];
+            newBoard[1][0].bg = 'yellowgreen';
+            newBoard[1][0].color = 'white';
+            setBoard(newBoard);
+            setTimeout(() => {
+              const newBoard = [...board];
+              newBoard[2][0].bg = 'yellowgreen';
+              newBoard[2][0].color = 'white';
+              setBoard(newBoard);
+            }, 300);
+          }, 300);
+        }, 300);
+        setGameEnd(true);
+      } else if (row0[1].value === 'circle-o' && row1[1].value === 'circle-o' && row2[1].value === 'circle-o') {
+        setTimeout(() => {
           const newBoard = [...board];
           newBoard[0][1].bg = 'yellowgreen';
           newBoard[0][1].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
-            newBoard[0][2].bg = 'yellowgreen';
-            newBoard[0][2].color = 'white';
+            newBoard[1][1].bg = 'yellowgreen';
+            newBoard[1][1].color = 'white';
             setBoard(newBoard);
+            setTimeout(() => {
+              const newBoard = [...board];
+              newBoard[2][1].bg = 'yellowgreen';
+              newBoard[2][1].color = 'white';
+              setBoard(newBoard);
+            }, 300);
           }, 300);
         }, 300);
-      }, 300);
-      setGameEnd(true);
-    }
-
-    if (row1[0].value === 'circle-o' && row1[1].value === 'circle-o' && row1[2].value === 'circle-o') {
-      setTimeout(()=>{
-        const newBoard = [...board];
-        newBoard[1][0].bg = 'yellowgreen';
-        newBoard[1][0].color = 'white';
-        setBoard(newBoard);
-        setTimeout(()=>{
+        setGameEnd(true);
+      } else if (row0[2].value === 'circle-o' && row1[2].value === 'circle-o' && row2[2].value === 'circle-o') {
+        setTimeout(() => {
           const newBoard = [...board];
-          newBoard[1][1].bg = 'yellowgreen';
-          newBoard[1][1].color = 'white';
+          newBoard[0][2].bg = 'yellowgreen';
+          newBoard[0][2].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
             newBoard[1][2].bg = 'yellowgreen';
             newBoard[1][2].color = 'white';
             setBoard(newBoard);
+            setTimeout(() => {
+              const newBoard = [...board];
+              newBoard[2][2].bg = 'yellowgreen';
+              newBoard[2][2].color = 'white';
+              setBoard(newBoard);
+            }, 300);
           }, 300);
         }, 300);
-      }, 300);
-      setGameEnd(true);
-    }
-
-    if (row2[0].value === 'circle-o' && row2[1].value === 'circle-o' && row2[2].value === 'circle-o') {
-      setTimeout(()=>{
-        const newBoard = [...board];
-        newBoard[2][0].bg = 'yellowgreen';
-        newBoard[2][0].color = 'white';
-        setBoard(newBoard);
-        setTimeout(()=>{
+        setGameEnd(true);
+      } else if (row0[0].value === 'circle-o' && row1[1].value === 'circle-o' && row2[2].value === 'circle-o') {
+        setTimeout(() => {
           const newBoard = [...board];
-          newBoard[2][1].bg = 'yellowgreen';
-          newBoard[2][1].color = 'white';
+          newBoard[0][0].bg = 'yellowgreen';
+          newBoard[0][0].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
-            newBoard[2][2].bg = 'yellowgreen';
-            newBoard[2][2].color = 'white';
+            newBoard[1][1].bg = 'yellowgreen';
+            newBoard[1][1].color = 'white';
             setBoard(newBoard);
+            setTimeout(() => {
+              const newBoard = [...board];
+              newBoard[2][2].bg = 'yellowgreen';
+              newBoard[2][2].color = 'white';
+              setBoard(newBoard);
+            }, 300);
           }, 300);
         }, 300);
-      }, 300);
-      setGameEnd(true);
-    }
-
-    if (row0[0].value === 'circle-o' && row1[0].value === 'circle-o' && row2[0].value === 'circle-o') {
-      setTimeout(()=>{
-        const newBoard = [...board];
-        newBoard[0][0].bg = 'yellowgreen';
-        newBoard[0][0].color = 'white';
-        setBoard(newBoard);
-        setTimeout(()=>{
+        setGameEnd(true);
+      } else if (row0[2].value === 'circle-o' && row1[1].value === 'circle-o' && row2[0].value === 'circle-o') {
+        setTimeout(() => {
           const newBoard = [...board];
-          newBoard[1][0].bg = 'yellowgreen';
-          newBoard[1][0].color = 'white';
+          newBoard[0][2].bg = 'yellowgreen';
+          newBoard[0][2].color = 'white';
           setBoard(newBoard);
-          setTimeout(()=>{
+          setTimeout(() => {
             const newBoard = [...board];
-            newBoard[2][0].bg = 'yellowgreen';
-            newBoard[2][0].color = 'white';
+            newBoard[1][1].bg = 'yellowgreen';
+            newBoard[1][1].color = 'white';
             setBoard(newBoard);
+            setTimeout(() => {
+              const newBoard = [...board];
+              newBoard[2][0].bg = 'yellowgreen';
+              newBoard[2][0].color = 'white';
+              setBoard(newBoard);
+            }, 300);
           }, 300);
         }, 300);
-      }, 300);
-      setGameEnd(true);
-    }
+        setGameEnd(true);
+      } else {
+        let rowEmpty = 0;
 
-    if (row0[1].value === 'circle-o' && row1[1].value === 'circle-o' && row2[1].value === 'circle-o') {
-      setTimeout(()=>{
-        const newBoard = [...board];
-        newBoard[0][1].bg = 'yellowgreen';
-        newBoard[0][1].color = 'white';
-        setBoard(newBoard);
-        setTimeout(()=>{
-          const newBoard = [...board];
-          newBoard[1][1].bg = 'yellowgreen';
-          newBoard[1][1].color = 'white';
-          setBoard(newBoard);
-          setTimeout(()=>{
-            const newBoard = [...board];
-            newBoard[2][1].bg = 'yellowgreen';
-            newBoard[2][1].color = 'white';
-            setBoard(newBoard);
-          }, 300);
-        }, 300);
-      }, 300);
-      setGameEnd(true);
-    }
+        board.map(row => {
+          row.map(r => rowEmpty += r.value === '' ? 1 : 0);
+        });
 
-    if (row0[2].value === 'circle-o' && row1[2].value === 'circle-o' && row2[2].value === 'circle-o') {
-      setTimeout(()=>{
-        const newBoard = [...board];
-        newBoard[0][2].bg = 'yellowgreen';
-        newBoard[0][2].color = 'white';
-        setBoard(newBoard);
-        setTimeout(()=>{
-          const newBoard = [...board];
-          newBoard[1][2].bg = 'yellowgreen';
-          newBoard[1][2].color = 'white';
-          setBoard(newBoard);
-          setTimeout(()=>{
-            const newBoard = [...board];
-            newBoard[2][2].bg = 'yellowgreen';
-            newBoard[2][2].color = 'white';
-            setBoard(newBoard);
-          }, 300);
-        }, 300);
-      }, 300);
-      setGameEnd(true);
-    }
-
-    if (row0[0].value === 'circle-o' && row1[1].value === 'circle-o' && row2[2].value === 'circle-o') {
-      setTimeout(()=>{
-        const newBoard = [...board];
-        newBoard[0][0].bg = 'yellowgreen';
-        newBoard[0][0].color = 'white';
-        setBoard(newBoard);
-        setTimeout(()=>{
-          const newBoard = [...board];
-          newBoard[1][1].bg = 'yellowgreen';
-          newBoard[1][1].color = 'white';
-          setBoard(newBoard);
-          setTimeout(()=>{
-            const newBoard = [...board];
-            newBoard[2][2].bg = 'yellowgreen';
-            newBoard[2][2].color = 'white';
-            setBoard(newBoard);
-          }, 300);
-        }, 300);
-      }, 300);
-      setGameEnd(true);
-    }
-
-    if (row0[2].value === 'circle-o' && row1[1].value === 'circle-o' && row2[0].value === 'circle-o') {
-      setTimeout(()=>{
-        const newBoard = [...board];
-        newBoard[0][2].bg = 'yellowgreen';
-        newBoard[0][2].color = 'white';
-        setBoard(newBoard);
-        setTimeout(()=>{
-          const newBoard = [...board];
-          newBoard[1][1].bg = 'yellowgreen';
-          newBoard[1][1].color = 'white';
-          setBoard(newBoard);
-          setTimeout(()=>{
-            const newBoard = [...board];
-            newBoard[2][0].bg = 'yellowgreen';
-            newBoard[2][0].color = 'white';
-            setBoard(newBoard);
-          }, 300);
-        }, 300);
-      }, 300);
-      setGameEnd(true);
-    }
+        if (rowEmpty === 0) {
+          board.map(row => {
+            row.map(r => {
+              r.bg = 'red';
+              r.color = 'white';
+              setGameEnd(true);
+            });
+          });
+        }
+      }
   }
 
   return (
