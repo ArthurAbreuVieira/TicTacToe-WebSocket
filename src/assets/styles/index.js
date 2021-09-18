@@ -95,7 +95,7 @@ export const Row = styled.View`
 export const Square = styled.TouchableOpacity`
   width: 100px;
   height: 100px;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: ${({ bg }) => bg || "rgba(0, 0, 0, .3)"};
   border: 5px solid gray;
   margin-left: ${({ margin_left }) => margin_left || "0px"};
   margin-right: ${({ margin_right }) => margin_right || "0px"};
