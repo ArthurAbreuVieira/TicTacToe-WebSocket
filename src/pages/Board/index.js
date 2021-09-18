@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Image } from 'react-native';
 import {
   BoardContainer,
@@ -13,23 +13,89 @@ import {
 
 } from '../../assets/styles';
 
-import { boardData } from '../../util/game/game';
+import { FontAwesome } from '@expo/vector-icons';
 
-export default function() {
+export default function () {
+  const [board, setBoard] = useState([
+    [{ color: 'green', value: '' }, { color: 'green', value: '' }, { color: 'green', value: '' }],
+    [{ color: 'green', value: '' }, { color: 'green', value: '' }, { color: 'green', value: '' }],
+    [{ color: 'green', value: '' }, { color: 'green', value: '' }, { color: 'green', value: '' }]
+  ]);
+  const [player, setPlayer] = useState('Player 1');
+  const [turn, setTurn] = useState('close');
+  const [gameEnd, setGameEnd] = useState(false);
+
+  function updateBoard(row, column, value) {
+    if (gameEnd) return;
+    if (board[row][column].value === '') {
+      const newBoard = [...board];
+      newBoard[row][column].value = value;
+      newBoard[row][column].color = turn === 'close' ? 'green' : 'red';
+      setBoard(newBoard);
+      setTurn(turn === 'close' ? 'circle-o' : 'close');
+      setPlayer(player === 'Player 1' ? 'Player 2' : 'Player 1');
+    }
+    return false;
+  }
+
+  useEffect(() => {
+    verifyWinner();
+  }, [board]);
+
+  function verifyWinner() {
+    const row0 = board[0];
+    const row1 = board[1];
+    const row2 = board[2];
+
+    // x
+    if (row0[0].value === 'close' && row0[1].value === 'close' && row0[2].value === 'close') setGameEnd(true);
+
+    if (row1[0].value === 'close' && row1[1].value === 'close' && row1[2].value === 'close') setGameEnd(true);
+
+    if (row2[0].value === 'close' && row2[1].value === 'close' && row2[2].value === 'close') setGameEnd(true);
+
+    if (row0[0].value === 'close' && row1[0].value === 'close' && row2[0].value === 'close') setGameEnd(true);
+
+    if (row0[1].value === 'close' && row1[1].value === 'close' && row2[1].value === 'close') setGameEnd(true);
+
+    if (row0[2].value === 'close' && row1[2].value === 'close' && row2[2].value === 'close') setGameEnd(true);
+
+    if (row0[0].value === 'close' && row1[1].value === 'close' && row2[2].value === 'close') setGameEnd(true);
+
+    if (row0[2].value === 'close' && row1[1].value === 'close' && row2[0].value === 'close') setGameEnd(true);
+
+    // o
+    if (row0[0].value === 'circle-o' && row0[1].value === 'circle-o' && row0[2].value === 'circle-o') setGameEnd(true);
+
+    if (row1[0].value === 'circle-o' && row1[1].value === 'circle-o' && row1[2].value === 'circle-o') setGameEnd(true);
+
+    if (row2[0].value === 'circle-o' && row2[1].value === 'circle-o' && row2[2].value === 'circle-o') setGameEnd(true);
+
+    if (row0[0].value === 'circle-o' && row1[0].value === 'circle-o' && row2[0].value === 'circle-o') setGameEnd(true);
+
+    if (row0[1].value === 'circle-o' && row1[1].value === 'circle-o' && row2[1].value === 'circle-o') setGameEnd(true);
+
+    if (row0[2].value === 'circle-o' && row1[2].value === 'circle-o' && row2[2].value === 'circle-o') setGameEnd(true);
+
+    if (row0[0].value === 'circle-o' && row1[1].value === 'circle-o' && row2[2].value === 'circle-o') setGameEnd(true);
+
+    if (row0[2].value === 'circle-o' && row1[1].value === 'circle-o' && row2[0].value === 'circle-o') setGameEnd(true);
+  }
+
   return (
     <BoardContainer>
 
-      <Title>Vez do Jogador 1</Title>
+      <Title>Vez do {player}</Title>
       <PlayersContainer>
         <View style={{
           flexDirection: 'row',
           justifyContent: 'space-evenly',
           alignItems: 'center',
         }}>
-          <Player size="110px">
+          <Player size={player === 'Player 1' ? "110px" : "70px"}>
             <PlayerIcon>
               <Image
-                source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSla-p7MqWVSLL2rpSQHlxEO6mKceKYPvZjo4oslefoeXE7-oMcRHP5IfT3qgllHC8kKvQ&usqp=CAU" }}
+                source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrvnqt4J7Y_VIX6d-AjUdviYgyWjOYF5msTsgDCEajLK3xz6k&s" }}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -38,10 +104,10 @@ export default function() {
               />
             </PlayerIcon>
           </Player>
-          <Player size="70px">
+          <Player size={player === 'Player 2' ? "110px" : "70px"}>
             <PlayerIcon>
               <Image
-                source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSla-p7MqWVSLL2rpSQHlxEO6mKceKYPvZjo4oslefoeXE7-oMcRHP5IfT3qgllHC8kKvQ&usqp=CAU" }}
+                source={{ uri: "https://images.megapixl.com/4707/47075236.jpg" }}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -54,40 +120,40 @@ export default function() {
       </PlayersContainer>
 
       <Board>
-        
+
         <Row>
-          <Square margin_right="10px" >
-            <Value>{boardData.row[0][0]}</Value>
+          <Square margin_right="10px" onPress={() => updateBoard(0, 0, turn)}>
+            <FontAwesome name={board[0][0].value} size={90} color={board[0][0].color} />
           </Square>
-          <Square>
-            <Value>{boardData.row[0][1]}</Value>
+          <Square onPress={() => updateBoard(0, 1, turn)}>
+            <FontAwesome name={board[0][1].value} size={90} color={board[0][1].color} />
           </Square>
-          <Square margin_left="10px" >
-            <Value>{boardData.row[0][2]}</Value>
+          <Square margin_left="10px" onPress={() => updateBoard(0, 2, turn)}>
+            <FontAwesome name={board[0][2].value} size={90} color={board[0][2].color} />
           </Square>
         </Row>
-        
+
         <Row>
-          <Square margin_right="10px" >
-            <Value>{boardData.row[1][0]}</Value>
+          <Square margin_right="10px" onPress={() => updateBoard(1, 0, turn)}>
+            <FontAwesome name={board[1][0].value} size={90} color={board[1][0].color} />
           </Square>
-          <Square>
-            <Value>{boardData.row[1][1]}</Value>
+          <Square onPress={() => updateBoard(1, 1, turn)}>
+            <FontAwesome name={board[1][1].value} size={90} color={board[1][1].color} />
           </Square>
-          <Square margin_left="10px" >
-            <Value>{boardData.row[1][2]}</Value>
+          <Square margin_left="10px" onPress={() => updateBoard(1, 2, turn)}>
+            <FontAwesome name={board[1][2].value} size={90} color={board[1][2].color} />
           </Square>
         </Row>
-        
+
         <Row>
-          <Square margin_right="10px" >
-            <Value>{boardData.row[2][0]}</Value>
+          <Square margin_right="10px" onPress={() => updateBoard(2, 0, turn)}>
+            <FontAwesome name={board[2][0].value} size={90} color={board[2][0].color} />
           </Square>
-          <Square>
-            <Value>{boardData.row[2][1]}</Value>
+          <Square onPress={() => updateBoard(2, 1, turn)}>
+            <FontAwesome name={board[2][1].value} size={90} color={board[2][1].color} />
           </Square>
-          <Square margin_left="10px" >
-            <Value>{boardData.row[2][2]}</Value>
+          <Square margin_left="10px" onPress={() => updateBoard(2, 2, turn)}>
+            <FontAwesome name={board[2][2].value} size={90} color={board[2][2].color} />
           </Square>
         </Row>
 
