@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image } from 'react-native';
+
+
 import {
   BoardContainer,
   PlayersContainer,
@@ -15,7 +17,9 @@ import {
 
 import { FontAwesome } from '@expo/vector-icons';
 
-export default function () {
+export default function ({ route }) {
+  const { level } = route.params;
+
   const [board, setBoard] = useState([
     [
       { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
@@ -50,10 +54,36 @@ export default function () {
     return false;
   }
 
+  function cpuMove() {
+    const possible = [];
+    if(level === "easy") {
+      board.map((row, index) => { 
+        row.map((column, i) => {
+          if(column.value === '') {
+            possible.push({row: index, column: i});
+          }
+        });
+      });
+    }
+      let move = Math.round(Math.random() * possible.length);
+      move = move >= possible.length ? move - 1 : move;
+      console.log(move, possible[move]);
+      if(possible.length !== 0)
+      updateBoard(possible[move].row, possible[move].column, turn);
+      else 
+        return;
+  }
+  
   useEffect(() => {
     verifyWinner();
   }, [board]);
-
+  
+  useEffect(() => {
+    if(!gameEnd && player === "Player 2") {
+      setTimeout(() => cpuMove(board), 500);
+    }
+  }, [player]);
+  
   function verifyWinner() {
     if (gameEnd) return;
     const row0 = board[0];
@@ -441,37 +471,55 @@ export default function () {
       <Board>
 
         <Row>
-          <Square bg={board[0][0].bg} margin_right="10px" onPress={() => updateBoard(0, 0, turn)}>
+          <Square bg={board[0][0].bg} margin_right="10px" onPress={() => {
+            if(player === "Player 1") updateBoard(0, 0, turn);
+          }}>
             <FontAwesome name={board[0][0].value} size={90} color={board[0][0].color} />
           </Square>
-          <Square bg={board[0][1].bg} onPress={() => updateBoard(0, 1, turn)}>
+          <Square bg={board[0][1].bg} onPress={() => {
+            if(player === "Player 1") updateBoard(0, 1, turn);
+          }}>
             <FontAwesome name={board[0][1].value} size={90} color={board[0][1].color} />
           </Square>
-          <Square bg={board[0][2].bg} margin_left="10px" onPress={() => updateBoard(0, 2, turn)}>
+          <Square bg={board[0][2].bg} margin_left="10px" onPress={() => {
+            if(player === "Player 1") updateBoard(0, 2, turn);
+          }}>
             <FontAwesome name={board[0][2].value} size={90} color={board[0][2].color} />
           </Square>
         </Row>
 
         <Row>
-          <Square bg={board[1][0].bg} margin_right="10px" onPress={() => updateBoard(1, 0, turn)}>
+          <Square bg={board[1][0].bg} margin_right="10px" onPress={() => {
+            if(player === "Player 1") updateBoard(1, 0, turn);
+          }}>
             <FontAwesome name={board[1][0].value} size={90} color={board[1][0].color} />
           </Square>
-          <Square bg={board[1][1].bg} onPress={() => updateBoard(1, 1, turn)}>
+          <Square bg={board[1][1].bg} onPress={() => {
+            if(player === "Player 1") updateBoard(1, 1, turn);
+          }}>
             <FontAwesome name={board[1][1].value} size={90} color={board[1][1].color} />
           </Square>
-          <Square bg={board[1][2].bg} margin_left="10px" onPress={() => updateBoard(1, 2, turn)}>
+          <Square bg={board[1][2].bg} margin_left="10px" onPress={() => {
+            if(player === "Player 1") updateBoard(1, 2, turn);
+          }}>
             <FontAwesome name={board[1][2].value} size={90} color={board[1][2].color} />
           </Square>
         </Row>
 
         <Row>
-          <Square bg={board[2][0].bg} margin_right="10px" onPress={() => updateBoard(2, 0, turn)}>
+          <Square bg={board[2][0].bg} margin_right="10px" onPress={() => {
+            if(player === "Player 1") updateBoard(2, 0, turn);
+          }}>
             <FontAwesome name={board[2][0].value} size={90} color={board[2][0].color} />
           </Square>
-          <Square bg={board[2][1].bg} onPress={() => updateBoard(2, 1, turn)}>
+          <Square bg={board[2][1].bg} onPress={() => {
+            if(player === "Player 1") updateBoard(2, 1, turn);
+          }}>
             <FontAwesome name={board[2][1].value} size={90} color={board[2][1].color} />
           </Square>
-          <Square bg={board[2][2].bg} margin_left="10px" onPress={() => updateBoard(2, 2, turn)}>
+          <Square bg={board[2][2].bg} margin_left="10px" onPress={() => {
+            if(player === "Player 1") updateBoard(2, 2, turn);
+          }}>
             <FontAwesome name={board[2][2].value} size={90} color={board[2][2].color} />
           </Square>
         </Row>
