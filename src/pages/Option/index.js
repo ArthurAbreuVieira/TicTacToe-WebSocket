@@ -20,7 +20,7 @@ export default function Lobby({ navigation }) {
 
         <Title>Lobby: </Title>
 
-        <Button onPress={() => navigation.navigate('Online', {singlePlayer: false})}>
+        <Button onPress={() => navigation.navigate('Online')}>
           <IconContainer>
             <FontAwesome name="gamepad" size={24} color="white" />
           </IconContainer>
