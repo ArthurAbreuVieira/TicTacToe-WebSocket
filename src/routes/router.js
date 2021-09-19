@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Lobby from '../pages/Lobby';
 import Board from '../pages/Board';
+import Option from '../pages/Option';
 
 export default function Router() {
   const Stack = createNativeStackNavigator();
@@ -21,6 +22,13 @@ export default function Router() {
         <Stack.Screen 
           name="Board"
           component={Board}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen 
+          name="Option"
+          component={Option}
           options={{
             headerShown: false
           }}

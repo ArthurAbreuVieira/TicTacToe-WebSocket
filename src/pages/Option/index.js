@@ -20,18 +20,18 @@ export default function Lobby({ navigation }) {
 
         <Title>Lobby: </Title>
 
-        <Button onPress={() => navigation.navigate('Board', {singlePlayer: true})}>
+        <Button onPress={() => navigation.navigate('Online', {singlePlayer: false})}>
           <IconContainer>
             <FontAwesome name="gamepad" size={24} color="white" />
           </IconContainer>
-          <ButtonText>SinglePlayer</ButtonText>
+          <ButtonText>online</ButtonText>
         </Button>
 
-        <Button onPress={() => navigation.navigate('Option', {singlePlayer: false})}>
+        <Button onPress={() => navigation.navigate('Board', {singlePlayer: false, online: false})}>
           <IconContainer>
             <FontAwesome name="gamepad" size={24} color="white" />
           </IconContainer>
-          <ButtonText>MultiPlayer</ButtonText>
+          <ButtonText>local</ButtonText>
         </Button>
 
       </Container>

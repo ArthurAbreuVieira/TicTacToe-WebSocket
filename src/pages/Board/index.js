@@ -17,7 +17,9 @@ import {
 
 import { FontAwesome } from '@expo/vector-icons';
 
+
 export default function ({ route }) {
+
   const { singlePlayer } = route.params;
   const [board, setBoard] = useState([
     [
@@ -36,8 +38,9 @@ export default function ({ route }) {
       { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
     ]
   ]);
-  const [player, setPlayer] = useState('Player 1');
-  const [turn, setTurn] = useState('close');
+  const starter = Math.ceil(Math.random()*2);
+  const [player, setPlayer] = useState('Player '+starter);
+  const [turn, setTurn] = useState(player === 'Player 1' ? 'close' : 'circle-o');
   const [gameEnd, setGameEnd] = useState(false);
 
   function updateBoard(row, column, value) {
@@ -64,7 +67,6 @@ export default function ({ route }) {
     });
     let move = Math.round(Math.random() * possible.length);
     move = move >= possible.length ? move - 1 : move;
-    console.log(move, possible[move]);
     if (possible.length !== 0)
       updateBoard(possible[move].row, possible[move].column, turn);
     else
@@ -431,15 +433,16 @@ export default function ({ route }) {
   return (
     <BoardContainer>
 
-      <Title>Vez do {player}</Title>
+      <Title>Vez de: </Title>
+      <FontAwesome name={player === 'Player 1' ? 'close' : 'circle-o'} size={80} color={turn === 'close' ? 'green' : 'red'} />
       <PlayersContainer>
         <View style={{
           flexDirection: 'row',
           justifyContent: 'space-evenly',
           alignItems: 'center',
         }}>
-          <Player size={player === 'Player 1' ? "110px" : "70px"}>
-            <PlayerIcon>
+          <Player>
+            <PlayerIcon borderColor={player === 'Player 1' ? "5px solid yellowgreen" : "5px solid rgb(110, 110, 110)"}>
               <Image
                 source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrvnqt4J7Y_VIX6d-AjUdviYgyWjOYF5msTsgDCEajLK3xz6k&s" }}
                 style={{
@@ -450,8 +453,8 @@ export default function ({ route }) {
               />
             </PlayerIcon>
           </Player>
-          <Player size={player === 'Player 2' ? "110px" : "70px"}>
-            <PlayerIcon>
+          <Player>
+            <PlayerIcon borderColor={player === 'Player 2' ? "5px solid orangered" : "5px solid rgb(110, 110, 110)"}>
               <Image
                 source={{ uri: "https://images.megapixl.com/4707/47075236.jpg" }}
                 style={{
@@ -469,7 +472,9 @@ export default function ({ route }) {
 
         <Row>
           <Square bg={board[0][0].bg} margin_right="10px" onPress={() => {
-            if (player === "Player 2" && singlePlayer) return;
+            if (player === "Player 2" && singlePlayer){
+              return;
+            }
             updateBoard(0, 0, turn);
           }}>
             <FontAwesome name={board[0][0].value} size={90} color={board[0][0].color} />
