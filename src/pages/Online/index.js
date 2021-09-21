@@ -137,7 +137,7 @@ export default function ({ route }) {
         }, 300);
       }, 300);
       setGameEnd(true);
-      setTimeout(() => setWinner(true), 1200);
+      setTimeout(() => setWinner("Player 1"), 1200);
     } else if (row1[0].value === 'close' && row1[1].value === 'close' && row1[2].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -158,7 +158,7 @@ export default function ({ route }) {
         }, 300);
       }, 300);
       setGameEnd(true);
-      setTimeout(() => setWinner(true), 1200);
+      setTimeout(() => setWinner("Player 1"), 1200);
     } else if (row2[0].value === 'close' && row2[1].value === 'close' && row2[2].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -179,7 +179,7 @@ export default function ({ route }) {
         }, 300);
       }, 300);
       setGameEnd(true);
-      setTimeout(() => setWinner(true), 1200);
+      setTimeout(() => setWinner("Player 1"), 1200);
     } else if (row0[0].value === 'close' && row1[0].value === 'close' && row2[0].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -200,7 +200,7 @@ export default function ({ route }) {
         }, 300);
       }, 300);
       setGameEnd(true);
-      setTimeout(() => setWinner(true), 1200);
+      setTimeout(() => setWinner("Player 1"), 1200);
     } else if (row0[1].value === 'close' && row1[1].value === 'close' && row2[1].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -221,7 +221,7 @@ export default function ({ route }) {
         }, 300);
       }, 300);
       setGameEnd(true);
-      setTimeout(() => setWinner(true), 1200);
+      setTimeout(() => setWinner("Player 1"), 1200);
     } else if (row0[2].value === 'close' && row1[2].value === 'close' && row2[2].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -242,7 +242,7 @@ export default function ({ route }) {
         }, 300);
       }, 300);
       setGameEnd(true);
-      setTimeout(() => setWinner(true), 1200);
+      setTimeout(() => setWinner("Player 1"), 1200);
     } else if (row0[0].value === 'close' && row1[1].value === 'close' && row2[2].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -263,7 +263,7 @@ export default function ({ route }) {
         }, 300);
       }, 300);
       setGameEnd(true);
-      setTimeout(() => setWinner(true), 1200);
+      setTimeout(() => setWinner("Player 1"), 1200);
     } else if (row0[2].value === 'close' && row1[1].value === 'close' && row2[0].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -284,7 +284,7 @@ export default function ({ route }) {
         }, 300);
       }, 300);
       setGameEnd(true);
-      setTimeout(() => setWinner(true), 1200);
+      setTimeout(() => setWinner("Player 1"), 1200);
     } else // o
       if (row0[0].value === 'circle-o' && row0[1].value === 'circle-o' && row0[2].value === 'circle-o') {
         setTimeout(() => {
@@ -306,7 +306,7 @@ export default function ({ route }) {
           }, 300);
         }, 300);
         setGameEnd(true);
-        setTimeout(() => setWinner(true), 1200);
+        setTimeout(() => setWinner("Player 2"), 1200);
       } else if (row1[0].value === 'circle-o' && row1[1].value === 'circle-o' && row1[2].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -327,7 +327,7 @@ export default function ({ route }) {
           }, 300);
         }, 300);
         setGameEnd(true);
-        setTimeout(() => setWinner(true), 1200);
+        setTimeout(() => setWinner("Player 2"), 1200);
       } else if (row2[0].value === 'circle-o' && row2[1].value === 'circle-o' && row2[2].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -348,7 +348,7 @@ export default function ({ route }) {
           }, 300);
         }, 300);
         setGameEnd(true);
-        setTimeout(() => setWinner(true), 1200);
+        setTimeout(() => setWinner("Player 2"), 1200);
       } else if (row0[0].value === 'circle-o' && row1[0].value === 'circle-o' && row2[0].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -369,7 +369,7 @@ export default function ({ route }) {
           }, 300);
         }, 300);
         setGameEnd(true);
-        setTimeout(() => setWinner(true), 1200);
+        setTimeout(() => setWinner("Player 2"), 1200);
       } else if (row0[1].value === 'circle-o' && row1[1].value === 'circle-o' && row2[1].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -390,7 +390,7 @@ export default function ({ route }) {
           }, 300);
         }, 300);
         setGameEnd(true);
-        setTimeout(() => setWinner(true), 1200);
+        setTimeout(() => setWinner("Player 2"), 1200);
       } else if (row0[2].value === 'circle-o' && row1[2].value === 'circle-o' && row2[2].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -411,7 +411,7 @@ export default function ({ route }) {
           }, 300);
         }, 300);
         setGameEnd(true);
-        setTimeout(() => setWinner(true), 1200);
+        setTimeout(() => setWinner("Player 2"), 1200);
       } else if (row0[0].value === 'circle-o' && row1[1].value === 'circle-o' && row2[2].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -432,7 +432,7 @@ export default function ({ route }) {
           }, 300);
         }, 300);
         setGameEnd(true);
-        setTimeout(() => setWinner(true), 1200);
+        setTimeout(() => setWinner("Player 2"), 1200);
       } else if (row0[2].value === 'circle-o' && row1[1].value === 'circle-o' && row2[0].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -453,7 +453,7 @@ export default function ({ route }) {
           }, 300);
         }, 300);
         setGameEnd(true);
-        setTimeout(() => setWinner(true), 1200);
+        setTimeout(() => setWinner("Player 2"), 1200);
       } else {
         let rowEmpty = 0;
 
@@ -467,7 +467,7 @@ export default function ({ route }) {
               r.bg = 'red';
               r.color = 'white';
               setGameEnd(true);
-              setTimeout(() => setWinner(true), 1200);
+              setTimeout(() => setWinner("Player 2"), 1200);
             });
           });
         }
