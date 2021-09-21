@@ -76,7 +76,6 @@ export const Player = styled.View`
   align-items: center;
   width: ${({ size }) => size || "90px"};
   height: ${({ size }) => size || "90px"};
-
 `;
 
 export const PlayerIcon = styled.View`

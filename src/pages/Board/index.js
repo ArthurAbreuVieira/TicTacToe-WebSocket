@@ -433,8 +433,7 @@ export default function ({ route }) {
   return (
     <BoardContainer>
 
-      <Title>Vez de: </Title>
-      <FontAwesome name={player === 'Player 1' ? 'close' : 'circle-o'} size={80} color={turn === 'close' ? 'green' : 'red'} />
+      <Title>{player === 'Player 1' ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>
         <View style={{
           flexDirection: 'row',
@@ -442,28 +441,10 @@ export default function ({ route }) {
           alignItems: 'center',
         }}>
           <Player>
-            <PlayerIcon borderColor={player === 'Player 1' ? "5px solid yellowgreen" : "5px solid rgb(110, 110, 110)"}>
-              <Image
-                source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrvnqt4J7Y_VIX6d-AjUdviYgyWjOYF5msTsgDCEajLK3xz6k&s" }}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 55,
-                }}
-              />
-            </PlayerIcon>
+            <FontAwesome name="close" size={turn === 'close' ? 90 : 70} color={turn === 'close' ? 'rgba(0,255,0,1)' : 'rgba(0,255,0,.3)'} />
           </Player>
           <Player>
-            <PlayerIcon borderColor={player === 'Player 2' ? "5px solid orangered" : "5px solid rgb(110, 110, 110)"}>
-              <Image
-                source={{ uri: "https://images.megapixl.com/4707/47075236.jpg" }}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 55,
-                }}
-              />
-            </PlayerIcon>
+            <FontAwesome name="circle-o" size={turn === 'circle-o' ? 90 : 70} color={turn === 'circle-o' ? 'rgba(255,0,0,1)' : 'rgba(255,0,0,.3)'} />
           </Player>
         </View>
       </PlayersContainer>

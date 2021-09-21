@@ -28,7 +28,7 @@ export default function Lobby({ navigation }) {
           <ButtonText>SinglePlayer</ButtonText>
         </Button>
 
-        <Button onPress={() => navigation.navigate('Option', {singlePlayer: false})}>
+        <Button onPress={() => navigation.navigate('Option')}>
           <IconContainer>
             <ImageIcon source={require('../../assets/img/network.png')}/>
           </IconContainer>
