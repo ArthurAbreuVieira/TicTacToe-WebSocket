@@ -19,9 +19,9 @@ import { FontAwesome } from '@expo/vector-icons';
 
 let ws;
 let me;              
+let room;
+let opponentConn;
 export default function ({ route }) {
-  let room;
-  let opponentConn;
   let starter = 0;
   const [player, setPlayer] = useState('');
   const [turn, setTurn] = useState(player === 'Player 1' ? 'close' : 'circle-o');
@@ -58,15 +58,23 @@ export default function ({ route }) {
       msg = JSON.parse(msg.data);
       if (msg.type === 'connected') {
         // alert(`1 - ${msg.conn1} | 2 - ${msg.conn2}`);
+        room = msg.room;;
         starter = msg.turn;
         let initialPlayer = 'Player ' + starter;
         me = msg.me == msg.player1 ? "Player 1" : "Player 2";
+        opponentConn = msg.me == msg.player1 ? msg.player2 : msg.player1;
+        console.log("me: "+msg.me, "oC"+opponentConn);
         console.log(initialPlayer, me, initialPlayer == me);
         setPlayer(initialPlayer);
         setTurn('Player ' + starter === 'Player 1' ? 'close' : 'circle-o');
         setBoard(msg.board);
         console.log(msg.board);
         // opponentConn = msg.opponentConn;
+      } else if(msg.type === "update_game") {
+        const game = JSON.parse(JSON.parse(msg.game));
+        setBoard(game.board);
+        setPlayer("Player "+game.turn);
+        setTurn('Player ' + game.turn === 'Player 1' ? 'close' : 'circle-o');
       }
     }
   }
@@ -92,6 +100,16 @@ export default function ({ route }) {
           "to": opponentConn
         })
       }));
+      console.log({
+        "type": "update_game",
+        "data": {
+          "board": newBoard,
+          "player": newPlayer,
+          "turn": newTurn,
+          "room": room,
+          "to": opponentConn
+        }
+      });
     }
     return false;
   }
@@ -489,9 +507,9 @@ export default function ({ route }) {
 
         <Row>
           <Square bg={board[0][0].bg} margin_right="10px" onPress={() => {
-            // if (player === me) updateGame(0, 0, turn);
-            if (player == me) alert('0, 0');
-            else console.log(player, me, player === me);
+            if (player === me) updateGame(0, 0, turn);
+            // if (player == me) alert('0, 0');
+            // else console.log(player, me, player === me);
           }}>
             <FontAwesome name={board[0][0].value} size={90} color={board[0][0].color} />
           </Square>
