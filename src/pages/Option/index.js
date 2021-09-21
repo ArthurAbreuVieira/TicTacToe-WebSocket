@@ -5,7 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
 import { 
-  LobbyWrapper,
+  Wrapper,
   Container,
   Title,
   Button,
@@ -16,7 +16,7 @@ import {
 
 export default function Lobby({ navigation }) {
   return (
-    <LobbyWrapper>
+    <Wrapper>
       <Container>
 
         <Title>Lobby: </Title>
@@ -36,6 +36,6 @@ export default function Lobby({ navigation }) {
         </Button>
 
       </Container>
-    </LobbyWrapper>
+    </Wrapper>
   );
 }

@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 
-export const LobbyWrapper = styled.SafeAreaView`
+export const Wrapper = styled.SafeAreaView`
   flex: 1;
-  background-color: rgb(15, 15, 15);
+  background-color: ${({ color }) => color || "rgb(15, 15, 15)"};
   justify-content: center;
   align-items: center;
   padding: 50px 0 50px 10px;
@@ -55,8 +55,8 @@ export const IconContainer = styled.View`
 `;
 
 export const ImageIcon = styled.Image`
-  width: 40px;
-  height: 40px;
+  width: ${({ size }) => size || "40px"};
+  height: ${({ size }) => size || "40px"};
 `;
 
 export const BoardContainer = styled.View`
@@ -115,4 +115,13 @@ export const Value = styled.Text`
   font-size: 90px;
   font-weight: 900;
   color: ${({ color }) => color || 'green'};
+`;
+
+export const WinnerContainer = styled.View`
+  width: 80%;
+  height: 300px;
+  background-color: rgb(49, 49, 49);
+  border-radius: 20px;
+  justify-content: space-evenly;
+  align-items: center;
 `;
