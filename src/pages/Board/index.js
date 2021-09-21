@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image } from 'react-native';
 
+import disableBackButton from '../../util/disableBackButton';
 
 import {
   BoardContainer,
@@ -74,6 +75,10 @@ export default function ({ route }) {
     else
       return;
   }
+
+  useEffect(() => {
+    disableBackButton();
+  }, []);
 
   useEffect(() => {
     verifyWinner();

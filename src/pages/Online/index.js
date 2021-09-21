@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image } from 'react-native';
 
+import disableBackButton from '../../util/disableBackButton';
+
 import LookingModal from '../../components/LookingModal';
 import WinnerModal from '../../components/WinnerModal';
 
@@ -104,6 +106,7 @@ export default function ({ route }) {
   }
 
   useEffect(() => {
+    disableBackButton();
     WSConnect();
   }, []);
 
