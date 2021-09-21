@@ -441,10 +441,10 @@ export default function ({ route }) {
           alignItems: 'center',
         }}>
           <Player>
-            <FontAwesome name="close" size={turn === 'close' ? 90 : 70} color={turn === 'close' ? 'rgba(0,255,0,1)' : 'rgba(0,255,0,.3)'} />
+            <FontAwesome name="close" size={turn === 'close' ? 100 : 70} color={turn === 'close' ? 'rgba(0,255,0,1)' : 'rgba(0,255,0,.3)'} />
           </Player>
           <Player>
-            <FontAwesome name="circle-o" size={turn === 'circle-o' ? 90 : 70} color={turn === 'circle-o' ? 'rgba(255,0,0,1)' : 'rgba(255,0,0,.3)'} />
+            <FontAwesome name="circle-o" size={turn === 'circle-o' ? 100 : 70} color={turn === 'circle-o' ? 'rgba(255,0,0,1)' : 'rgba(255,0,0,.3)'} />
           </Player>
         </View>
       </PlayersContainer>

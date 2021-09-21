@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image } from 'react-native';
 
+import LookingModal from '../../components/LookingModal';
 
 import {
   BoardContainer,
@@ -23,6 +24,7 @@ let room;
 let opponentConn;
 export default function ({ route }) {
   let starter = 0;
+  const [looking, setLooking] = useState(true);
   const [player, setPlayer] = useState('');
   const [turn, setTurn] = useState(player === 'Player 1' ? 'close' : 'circle-o');
   const [gameEnd, setGameEnd] = useState(false);
@@ -64,7 +66,7 @@ export default function ({ route }) {
         opponentConn = msg.me == msg.player1 ? msg.player2 : msg.player1;
         setPlayer(initialPlayer);
         setTurn('Player ' + starter === 'Player 1' ? 'close' : 'circle-o');
-        setBoard(msg.board);
+        setLooking(false);
       } else if(msg.type === "update_game") {
         const game = JSON.parse(JSON.parse(msg.game));
         setBoard(game.board);
@@ -452,7 +454,7 @@ export default function ({ route }) {
 
   return (
     <BoardContainer>
-
+      <LookingModal visible={looking}/>
       <Title>{player === me ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>
         <View style={{
@@ -461,10 +463,10 @@ export default function ({ route }) {
           alignItems: 'center',
         }}>
           <Player>
-            <FontAwesome name="close" size={turn === 'close' ? 90 : 70} color={turn === 'close' ? 'rgba(0,255,0,1)' : 'rgba(0,255,0,.3)'} />
+            <FontAwesome name="close" size={turn === 'close' ? 100 : 70} color={turn === 'close' ? 'rgba(0,255,0,1)' : 'rgba(0,255,0,.3)'} />
           </Player>
           <Player>
-            <FontAwesome name="circle-o" size={turn === 'circle-o' ? 90 : 70} color={turn === 'circle-o' ? 'rgba(255,0,0,1)' : 'rgba(255,0,0,.3)'} />
+            <FontAwesome name="circle-o" size={turn === 'circle-o' ? 100 : 70} color={turn === 'circle-o' ? 'rgba(255,0,0,1)' : 'rgba(255,0,0,.3)'} />
           </Player>
         </View>
       </PlayersContainer>
