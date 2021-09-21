@@ -46,12 +46,17 @@ export const ButtonText = styled.Text`
 `;
 
 export const IconContainer = styled.View`
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
   border-radius: 15px;
   background-color: rgba(0, 0, 0, .4);
   justify-content: center;
   align-items: center;
+`;
+
+export const ImageIcon = styled.Image`
+  width: 40px;
+  height: 40px;
 `;
 
 export const BoardContainer = styled.View`

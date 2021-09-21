@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,7 +10,8 @@ import {
   Title,
   Button,
   ButtonText,
-  IconContainer
+  IconContainer,
+  ImageIcon
 } from '../../assets/styles';
 
 export default function Lobby({ navigation }) {
@@ -22,14 +23,14 @@ export default function Lobby({ navigation }) {
 
         <Button onPress={() => navigation.navigate('Online')}>
           <IconContainer>
-            <FontAwesome name="gamepad" size={24} color="white" />
+            <ImageIcon source={require('../../assets/img/wifi.png')}/>
           </IconContainer>
           <ButtonText>online</ButtonText>
         </Button>
 
         <Button onPress={() => navigation.navigate('Board', {singlePlayer: false, online: false})}>
           <IconContainer>
-            <FontAwesome name="gamepad" size={24} color="white" />
+            <ImageIcon source={require('../../assets/img/location.png')}/>
           </IconContainer>
           <ButtonText>local</ButtonText>
         </Button>
