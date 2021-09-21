@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, LogBox } from 'react-native';
 
 
 import {
@@ -18,23 +18,58 @@ import {
 import { FontAwesome } from '@expo/vector-icons';
 
 let ws;
-let room;
-let opponentConn;
-let me;
+let me;              
 export default function ({ route }) {
+  let room;
+  let opponentConn;
+  let starter = 0;
+  const [player, setPlayer] = useState('');
+  const [turn, setTurn] = useState(player === 'Player 1' ? 'close' : 'circle-o');
+  const [gameEnd, setGameEnd] = useState(false);
+  const [board, setBoard] = useState([
+    [
+      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
+      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
+      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
+    ],
+    [
+      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
+      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
+      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
+    ],
+    [
+      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
+      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
+      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
+    ]
+  ]);
+  
+  useEffect(() => {
+    verifyWinner();
+  }, [board]);
+  
+  useEffect(() => {
+  
+  }, [player]);
+
   function WSConnect() {
-    ws = new WebSocket("ws://192.168.100.43:8080");
+    ws = new WebSocket("ws://192.168.100.56:8080");
     ws.onmessage = msg => {
       msg = JSON.parse(msg.data);
-      if(msg.type === 'connected') {
+      if (msg.type === 'connected') {
         // alert(`1 - ${msg.conn1} | 2 - ${msg.conn2}`);
         starter = msg.turn;
+        let initialPlayer = 'Player ' + starter;
         me = msg.me == msg.player1 ? "Player 1" : "Player 2";
-        setPlayer('Player '+starter);
+        console.log(initialPlayer, me, initialPlayer == me);
+        setPlayer(initialPlayer);
+        setTurn('Player ' + starter === 'Player 1' ? 'close' : 'circle-o');
+        setBoard(msg.board);
+        console.log(msg.board);
         // opponentConn = msg.opponentConn;
       }
     }
-  }  
+  }
 
   function updateGame(row, column, value) {
     if (gameEnd) return;
@@ -64,36 +99,6 @@ export default function ({ route }) {
   useEffect(() => {
     WSConnect();
   }, []);
-
-  const [board, setBoard] = useState([
-    [
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
-    ],
-    [
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
-    ],
-    [
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
-    ]
-  ]);
-  let starter = 0;
-  const [player, setPlayer] = useState('');
-  const [turn, setTurn] = useState(player === 'Player 1' ? 'close' : 'circle-o');
-  const [gameEnd, setGameEnd] = useState(false);
-
-  useEffect(() => {
-    verifyWinner();
-  }, [board]);
-
-  useEffect(() => {
-
-  }, [player]);
 
   function verifyWinner() {
     if (gameEnd) return;
@@ -484,7 +489,9 @@ export default function ({ route }) {
 
         <Row>
           <Square bg={board[0][0].bg} margin_right="10px" onPress={() => {
-            if (player === me) updateGame(0, 0, turn);
+            // if (player === me) updateGame(0, 0, turn);
+            if (player == me) alert('0, 0');
+            else console.log(player, me, player === me);
           }}>
             <FontAwesome name={board[0][0].value} size={90} color={board[0][0].color} />
           </Square>
