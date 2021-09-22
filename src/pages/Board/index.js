@@ -468,7 +468,8 @@ export default function ({ route, navigation }) {
         <LocalWinner visible={winner !== false ? true : false} back={() => backScreen(navigation)} winner={winner}/>
       }
 
-      <Title>{player === 'Player 1' ? 'Sua vez:' : 'Vez do adversário:'}</Title>
+      {singlePlayer&&<Title>{player === 'Player 1' ? 'Sua vez:' : 'Vez do adversário:'}</Title>}
+      {!singlePlayer&&<Title>Vez de: <FontAwesome name={player === 'Player 1' ? "close" : "circle-o"} size={35} color={player === "Player 1" ? "rgb(0,255,0)" : "rgb(255,0,0)"} /></Title>}
       <PlayersContainer>
         <View style={{
           flexDirection: 'row',
