@@ -477,7 +477,7 @@ export default function ({ route }) {
   return (
     <BoardContainer>
       <LookingModal visible={looking}/>
-      <WinnerModal visible={winner}/>
+      <WinnerModal visible={winner === me ? true : false}/>
       {/* <LookingModal visible={looking}/> */}
       <Title>{player === me ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>
