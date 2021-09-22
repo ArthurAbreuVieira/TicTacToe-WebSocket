@@ -5,6 +5,7 @@ import disableBackButton from '../../util/disableBackButton';
 
 import LookingModal from '../../components/LookingModal';
 import WinnerModal from '../../components/WinnerModal';
+import LoserModal from '../../components/LoserModal';
 
 import {
   BoardContainer,
@@ -29,6 +30,7 @@ export default function ({ route }) {
   let starter = 0;
   const [looking, setLooking] = useState(true);
   const [winner, setWinner] = useState(false);
+  const [loser, setLoser] = useState(false);
   const [player, setPlayer] = useState('');
   const [turn, setTurn] = useState(player === 'Player 1' ? 'close' : 'circle-o');
   const [gameEnd, setGameEnd] = useState(false);
@@ -138,6 +140,7 @@ export default function ({ route }) {
       }, 300);
       setGameEnd(true);
       setTimeout(() => setWinner("Player 1"), 1200);
+      setTimeout(() => setLoser(true), 1200);
     } else if (row1[0].value === 'close' && row1[1].value === 'close' && row1[2].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -159,6 +162,7 @@ export default function ({ route }) {
       }, 300);
       setGameEnd(true);
       setTimeout(() => setWinner("Player 1"), 1200);
+      setTimeout(() => setLoser(true), 1200);
     } else if (row2[0].value === 'close' && row2[1].value === 'close' && row2[2].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -180,6 +184,7 @@ export default function ({ route }) {
       }, 300);
       setGameEnd(true);
       setTimeout(() => setWinner("Player 1"), 1200);
+      setTimeout(() => setLoser(true), 1200);
     } else if (row0[0].value === 'close' && row1[0].value === 'close' && row2[0].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -201,6 +206,7 @@ export default function ({ route }) {
       }, 300);
       setGameEnd(true);
       setTimeout(() => setWinner("Player 1"), 1200);
+      setTimeout(() => setLoser(true), 1200);
     } else if (row0[1].value === 'close' && row1[1].value === 'close' && row2[1].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -222,6 +228,7 @@ export default function ({ route }) {
       }, 300);
       setGameEnd(true);
       setTimeout(() => setWinner("Player 1"), 1200);
+      setTimeout(() => setLoser(true), 1200);
     } else if (row0[2].value === 'close' && row1[2].value === 'close' && row2[2].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -243,6 +250,7 @@ export default function ({ route }) {
       }, 300);
       setGameEnd(true);
       setTimeout(() => setWinner("Player 1"), 1200);
+      setTimeout(() => setLoser(true), 1200);
     } else if (row0[0].value === 'close' && row1[1].value === 'close' && row2[2].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -264,6 +272,7 @@ export default function ({ route }) {
       }, 300);
       setGameEnd(true);
       setTimeout(() => setWinner("Player 1"), 1200);
+      setTimeout(() => setLoser(true), 1200);
     } else if (row0[2].value === 'close' && row1[1].value === 'close' && row2[0].value === 'close') {
       setTimeout(() => {
         const newBoard = [...board];
@@ -285,6 +294,7 @@ export default function ({ route }) {
       }, 300);
       setGameEnd(true);
       setTimeout(() => setWinner("Player 1"), 1200);
+      setTimeout(() => setLoser(true), 1200);
     } else // o
       if (row0[0].value === 'circle-o' && row0[1].value === 'circle-o' && row0[2].value === 'circle-o') {
         setTimeout(() => {
@@ -307,6 +317,7 @@ export default function ({ route }) {
         }, 300);
         setGameEnd(true);
         setTimeout(() => setWinner("Player 2"), 1200);
+        setTimeout(() => setLoser(true), 1200);
       } else if (row1[0].value === 'circle-o' && row1[1].value === 'circle-o' && row1[2].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -328,6 +339,7 @@ export default function ({ route }) {
         }, 300);
         setGameEnd(true);
         setTimeout(() => setWinner("Player 2"), 1200);
+        setTimeout(() => setLoser(true), 1200);
       } else if (row2[0].value === 'circle-o' && row2[1].value === 'circle-o' && row2[2].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -349,6 +361,7 @@ export default function ({ route }) {
         }, 300);
         setGameEnd(true);
         setTimeout(() => setWinner("Player 2"), 1200);
+        setTimeout(() => setLoser(true), 1200);
       } else if (row0[0].value === 'circle-o' && row1[0].value === 'circle-o' && row2[0].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -370,6 +383,7 @@ export default function ({ route }) {
         }, 300);
         setGameEnd(true);
         setTimeout(() => setWinner("Player 2"), 1200);
+        setTimeout(() => setLoser(true), 1200);
       } else if (row0[1].value === 'circle-o' && row1[1].value === 'circle-o' && row2[1].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -391,6 +405,7 @@ export default function ({ route }) {
         }, 300);
         setGameEnd(true);
         setTimeout(() => setWinner("Player 2"), 1200);
+        setTimeout(() => setLoser(true), 1200);
       } else if (row0[2].value === 'circle-o' && row1[2].value === 'circle-o' && row2[2].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -412,6 +427,7 @@ export default function ({ route }) {
         }, 300);
         setGameEnd(true);
         setTimeout(() => setWinner("Player 2"), 1200);
+        setTimeout(() => setLoser(true), 1200);
       } else if (row0[0].value === 'circle-o' && row1[1].value === 'circle-o' && row2[2].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -433,6 +449,7 @@ export default function ({ route }) {
         }, 300);
         setGameEnd(true);
         setTimeout(() => setWinner("Player 2"), 1200);
+        setTimeout(() => setLoser(true), 1200);
       } else if (row0[2].value === 'circle-o' && row1[1].value === 'circle-o' && row2[0].value === 'circle-o') {
         setTimeout(() => {
           const newBoard = [...board];
@@ -454,6 +471,7 @@ export default function ({ route }) {
         }, 300);
         setGameEnd(true);
         setTimeout(() => setWinner("Player 2"), 1200);
+        setTimeout(() => setLoser(true), 1200);
       } else {
         let rowEmpty = 0;
 
@@ -468,6 +486,7 @@ export default function ({ route }) {
               r.color = 'white';
               setGameEnd(true);
               setTimeout(() => setWinner("Player 2"), 1200);
+              setTimeout(() => setLoser(true), 1200);
             });
           });
         }
@@ -478,7 +497,8 @@ export default function ({ route }) {
     <BoardContainer>
       <LookingModal visible={looking}/>
       <WinnerModal visible={winner === me ? true : false}/>
-      {/* <LookingModal visible={looking}/> */}
+      { loser && <LoserModal visible={winner !== me ? true : false}/> }
+
       <Title>{player === me ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>
         <View style={{

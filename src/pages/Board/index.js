@@ -18,6 +18,7 @@ import {
 
 import { FontAwesome } from '@expo/vector-icons';
 import WinnerModal from '../../components/WinnerModal';
+import LoserModal from '../../components/LoserModal';
 
 
 export default function ({ route }) {
@@ -457,6 +458,7 @@ export default function ({ route }) {
   return (
     <BoardContainer>
       <WinnerModal visible={winner === "Player 1" ? true : false}/>
+      <LoserModal visible={winner === "Player 2" ? true : false}/>
 
       <Title>{player === 'Player 1' ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>
