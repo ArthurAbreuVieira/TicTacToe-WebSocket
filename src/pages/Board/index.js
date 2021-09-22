@@ -457,8 +457,8 @@ export default function ({ route, navigation }) {
 
   return (
     <BoardContainer>
-      <WinnerModal visible={winner === "Player 1" ? true : false} back={() => navigation.navigate('Lobby')}/>
-      <LoserModal visible={winner === "Player 2" ? true : false} back={() => navigation.navigate('Lobby')}/>
+      <WinnerModal visible={winner === "Player 1" ? true : false} back={() => backScreen(navigation)}/>
+      <LoserModal visible={winner === "Player 2" ? true : false} back={() => backScreen(navigation)}/>
 
       <Title>{player === 'Player 1' ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>

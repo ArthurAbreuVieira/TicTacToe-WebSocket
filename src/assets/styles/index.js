@@ -19,7 +19,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
   color: #fff;
   font-size: 32px;
-
+  text-align: center;
 `;
 
 export const Button = styled.TouchableOpacity`

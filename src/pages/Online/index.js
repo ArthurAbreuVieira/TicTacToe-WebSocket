@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, AppState } from 'react-native';
 
 import disableBackButton from '../../util/disableBackButton';
+import backScreen from '../../util/backScreen';
 
 import LookingModal from '../../components/LookingModal';
 import WinnerModal from '../../components/WinnerModal';
 import LoserModal from '../../components/LoserModal';
+import ClosedConn from '../../components/ClosedConn';
 
 import {
   BoardContainer,
@@ -22,12 +24,19 @@ import {
 
 import { FontAwesome } from '@expo/vector-icons';
 
+
 let ws;
 let me;              
 let room;
 let opponentConn;
 export default function ({ route, navigation }) {
+  AppState.addEventListener("change", () => {
+    if(AppState.currentState === "background") ws.close();
+    else if(AppState.currentState === "active" && room === undefined) WSConnect();
+    else navigation.navigate("Lobby");
+  });
   let starter = 0;
+  const [conn, setConn] = useState(true);
   const [looking, setLooking] = useState(true);
   const [winner, setWinner] = useState(false);
   const [loser, setLoser] = useState(false);
@@ -78,6 +87,8 @@ export default function ({ route, navigation }) {
         setBoard(game.board);
         setPlayer("Player "+game.turn);
         setTurn('Player ' + game.turn === 'Player 1' ? 'close' : 'circle-o');
+      } else if(msg.type === "opponent_closed") {
+        setConn(false);
       }
     }
   }
@@ -495,9 +506,10 @@ export default function ({ route, navigation }) {
 
   return (
     <BoardContainer>
-      <LookingModal visible={looking}/>
-      <WinnerModal visible={winner === me ? true : false} back={() => navigation.navigate('Lobby')}/>
-      { loser && <LoserModal visible={winner !== me ? true : false} back={() => navigation.navigate('Lobby')}/> }
+      <ClosedConn visible={!conn} back={() => backScreen(navigation,ws)} />
+      <LookingModal visible={looking} back={() => backScreen(navigation,ws)} />
+      <WinnerModal visible={winner === me ? true : false} back={() => backScreen(navigation,ws)}/>
+      { loser && <LoserModal visible={winner !== me ? true : false} back={() => backScreen(navigation,ws)}/> }
 
       <Title>{player === me ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>
