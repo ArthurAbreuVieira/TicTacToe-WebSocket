@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Image } from 'react-native';
 
 import disableBackButton from '../../util/disableBackButton';
+import backScreen from '../../util/backScreen';
 
 import {
   BoardContainer,
@@ -19,6 +20,7 @@ import {
 import { FontAwesome } from '@expo/vector-icons';
 import WinnerModal from '../../components/WinnerModal';
 import LoserModal from '../../components/LoserModal';
+import LocalWinner from '../../components/LocalWinner';
 
 
 export default function ({ route, navigation }) {
@@ -42,8 +44,8 @@ export default function ({ route, navigation }) {
       { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
     ]
   ]);
-  const starter = Math.ceil(Math.random()*2);
-  const [player, setPlayer] = useState('Player '+starter);
+  const starter = Math.ceil(Math.random() * 2);
+  const [player, setPlayer] = useState('Player ' + starter);
   const [turn, setTurn] = useState(player === 'Player 1' ? 'close' : 'circle-o');
   const [gameEnd, setGameEnd] = useState(false);
 
@@ -457,8 +459,14 @@ export default function ({ route, navigation }) {
 
   return (
     <BoardContainer>
-      <WinnerModal visible={winner === "Player 1" ? true : false} back={() => backScreen(navigation)}/>
-      <LoserModal visible={winner === "Player 2" ? true : false} back={() => backScreen(navigation)}/>
+
+      {singlePlayer && <>
+        <WinnerModal visible={winner === "Player 1" ? true : false} back={() => backScreen(navigation)} />
+        <LoserModal visible={winner === "Player 2" ? true : false} back={() => backScreen(navigation)} />
+      </>}
+      { !singlePlayer && 
+        <LocalWinner visible={winner !== false ? true : false} back={() => backScreen(navigation)} winner={winner}/>
+      }
 
       <Title>{player === 'Player 1' ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>
@@ -480,7 +488,7 @@ export default function ({ route, navigation }) {
 
         <Row>
           <Square bg={board[0][0].bg} margin_right="10px" onPress={() => {
-            if (player === "Player 2" && singlePlayer){
+            if (player === "Player 2" && singlePlayer) {
               return;
             }
             updateBoard(0, 0, turn);
