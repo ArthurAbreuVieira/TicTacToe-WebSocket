@@ -21,7 +21,7 @@ import WinnerModal from '../../components/WinnerModal';
 import LoserModal from '../../components/LoserModal';
 
 
-export default function ({ route }) {
+export default function ({ route, navigation }) {
 
   const { singlePlayer } = route.params;
   const [winner, setWinner] = useState(false);
@@ -457,8 +457,8 @@ export default function ({ route }) {
 
   return (
     <BoardContainer>
-      <WinnerModal visible={winner === "Player 1" ? true : false}/>
-      <LoserModal visible={winner === "Player 2" ? true : false}/>
+      <WinnerModal visible={winner === "Player 1" ? true : false} back={() => navigation.navigate('Lobby')}/>
+      <LoserModal visible={winner === "Player 2" ? true : false} back={() => navigation.navigate('Lobby')}/>
 
       <Title>{player === 'Player 1' ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>

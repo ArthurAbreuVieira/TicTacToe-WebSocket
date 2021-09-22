@@ -28,7 +28,7 @@ export const Button = styled.TouchableOpacity`
   width: 90%;
   height: 80px;
   border-radius: 10px;
-  padding-left: 20px;
+  padding-left: ${({ padding }) => padding || "20px"};
   margin-bottom: 20px;
   justify-content: flex-start;
   align-items: center;
@@ -42,7 +42,7 @@ export const ButtonText = styled.Text`
   text-shadow: 0 0 10px #000;
   font-size: 30px;
   font-weight: 700;
-  margin-left: 20px;
+  margin-left: ${({ margin }) => margin || "20px"};
 `;
 
 export const IconContainer = styled.View`
@@ -119,7 +119,7 @@ export const Value = styled.Text`
 
 export const WinnerContainer = styled.View`
   width: 80%;
-  height: 300px;
+  height: 350px;
   background-color: rgb(49, 49, 49);
   border-radius: 20px;
   justify-content: space-evenly;

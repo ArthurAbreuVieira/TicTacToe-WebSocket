@@ -26,7 +26,7 @@ let ws;
 let me;              
 let room;
 let opponentConn;
-export default function ({ route }) {
+export default function ({ route, navigation }) {
   let starter = 0;
   const [looking, setLooking] = useState(true);
   const [winner, setWinner] = useState(false);
@@ -496,8 +496,8 @@ export default function ({ route }) {
   return (
     <BoardContainer>
       <LookingModal visible={looking}/>
-      <WinnerModal visible={winner === me ? true : false}/>
-      { loser && <LoserModal visible={winner !== me ? true : false}/> }
+      <WinnerModal visible={winner === me ? true : false} back={() => navigation.navigate('Lobby')}/>
+      { loser && <LoserModal visible={winner !== me ? true : false} back={() => navigation.navigate('Lobby')}/> }
 
       <Title>{player === me ? 'Sua vez:' : 'Vez do adversário:'}</Title>
       <PlayersContainer>
