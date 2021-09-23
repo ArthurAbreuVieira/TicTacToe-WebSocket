@@ -11,15 +11,13 @@ import {
   Button,
   ButtonText,
   IconContainer,
-  ImageIcon
+  ImageIcon,
 } from '../../assets/styles';
 
 export default function Lobby({ navigation }) {
   return (
     <Wrapper>
       <Container>
-
-        <Title>Lobby: </Title>
 
         <Button onPress={() => navigation.navigate('Online')}>
           <IconContainer>
@@ -33,6 +31,13 @@ export default function Lobby({ navigation }) {
             <ImageIcon source={require('../../assets/img/location.png')}/>
           </IconContainer>
           <ButtonText>local</ButtonText>
+        </Button>
+
+        <Button onPress={() => navigation.navigate('Lobby')}>
+          <IconContainer>
+            <ImageIcon source={require('../../assets/img/arrows.png')}/>
+          </IconContainer>
+          <ButtonText>voltar</ButtonText>
         </Button>
 
       </Container>
