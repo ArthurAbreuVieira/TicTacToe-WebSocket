@@ -19,6 +19,9 @@ import {
   Square,
   Value,
   Title,
+  IconContainer,
+  ImageIcon,
+  BackButtonContainer
 
 } from '../../assets/styles';
 
@@ -506,6 +509,13 @@ export default function ({ route, navigation }) {
 
   return (
     <BoardContainer>
+      <BackButtonContainer onPress={() => backScreen(navigation, ws)}>
+        <IconContainer style={{flexDirection:"row",justifyContent:"flex-start",alignItems:"center"}}>
+          <ImageIcon size="30px" source={require('../../assets/img/arrows.png')}/>
+          <Title size="20px" color="cyan">Sair</Title>
+        </IconContainer>
+      </BackButtonContainer>
+
       <ClosedConn visible={!conn} back={() => backScreen(navigation,ws)} />
       <LookingModal visible={looking} back={() => backScreen(navigation,ws)} />
       <WinnerModal visible={winner === me ? true : false} back={() => backScreen(navigation,ws)}/>

@@ -17,8 +17,8 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: #fff;
-  font-size: 32px;
+  color: ${({ color }) => color || "#fff"};
+  font-size: ${({ size }) => size || "32px"};
   text-align: center;
 `;
 
@@ -124,4 +124,11 @@ export const WinnerContainer = styled.View`
   border-radius: 20px;
   justify-content: space-evenly;
   align-items: center;
+`;
+
+export const BackButtonContainer = styled.TouchableOpacity`
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:center;
+  width:90%;
 `;

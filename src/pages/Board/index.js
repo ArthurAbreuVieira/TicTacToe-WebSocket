@@ -14,7 +14,9 @@ import {
   Square,
   Value,
   Title,
-
+  IconContainer,
+  ImageIcon,
+  BackButtonContainer
 } from '../../assets/styles';
 
 import { FontAwesome } from '@expo/vector-icons';
@@ -459,7 +461,12 @@ export default function ({ route, navigation }) {
 
   return (
     <BoardContainer>
-
+      <BackButtonContainer onPress={() => backScreen(navigation)}>
+        <IconContainer style={{flexDirection:"row",justifyContent:"flex-start",alignItems:"center"}}>
+          <ImageIcon size="30px" source={require('../../assets/img/arrows.png')}/>
+          <Title size="20px" color="cyan">Sair</Title>
+        </IconContainer>
+      </BackButtonContainer>
       {singlePlayer && <>
         <WinnerModal visible={winner === "Player 1" ? true : false} back={() => backScreen(navigation)} />
         <LoserModal visible={winner === "Player 2" ? true : false} back={() => backScreen(navigation)} />

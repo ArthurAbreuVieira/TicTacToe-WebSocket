@@ -18,9 +18,7 @@ export default function Lobby({ navigation }) {
   return (
     <Wrapper>
       <Container>
-
-        <Title>Lobby: </Title>
-
+        
         <Button onPress={() => navigation.navigate('Board', {singlePlayer: true})}>
           <IconContainer>
             <ImageIcon source={require('../../assets/img/gamepad.png')}/>
