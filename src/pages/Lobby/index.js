@@ -1,37 +1,32 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
 
-import { FontAwesome } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-
-import { 
+import {
   Wrapper,
   Container,
-  Title,
-  Button,
-  ButtonText,
-  IconContainer,
   ImageIcon
 } from '../../assets/styles';
+
+import Button from '../../components/Button';
 
 export default function Lobby({ navigation }) {
   return (
     <Wrapper>
       <Container>
-        
-        <Button onPress={() => navigation.navigate('Board', {singlePlayer: true})}>
-          <IconContainer>
-            <ImageIcon source={require('../../assets/img/gamepad.png')}/>
-          </IconContainer>
-          <ButtonText>SinglePlayer</ButtonText>
-        </Button>
 
-        <Button onPress={() => navigation.navigate('Option')}>
-          <IconContainer>
-            <ImageIcon source={require('../../assets/img/network.png')}/>
-          </IconContainer>
-          <ButtonText>MultiPlayer</ButtonText>
-        </Button>
+        <Button
+          route="Board"
+          icon={<ImageIcon source={require(`../../assets/img/gamepad.png`)} />}
+          text="singleplayer"
+          navigation={navigation}
+          params={{ singlePlayer: true }}
+        />
+
+        <Button
+          route="Option"
+          icon={<ImageIcon source={require(`../../assets/img/network.png`)} />}
+          text="multiplayer"
+          navigation={navigation}
+        />
 
       </Container>
     </Wrapper>

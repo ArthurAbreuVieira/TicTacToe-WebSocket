@@ -1,44 +1,37 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
-
-import { FontAwesome } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
 
 import { 
   Wrapper,
   Container,
-  Title,
-  Button,
-  ButtonText,
-  IconContainer,
-  ImageIcon,
+  ImageIcon
 } from '../../assets/styles';
+
+import Button from '../../components/Button';
 
 export default function Lobby({ navigation }) {
   return (
     <Wrapper>
       <Container>
 
-        <Button onPress={() => navigation.navigate('Online')}>
-          <IconContainer>
-            <ImageIcon source={require('../../assets/img/wifi.png')}/>
-          </IconContainer>
-          <ButtonText>online</ButtonText>
-        </Button>
-
-        <Button onPress={() => navigation.navigate('Board', {singlePlayer: false, online: false})}>
-          <IconContainer>
-            <ImageIcon source={require('../../assets/img/location.png')}/>
-          </IconContainer>
-          <ButtonText>local</ButtonText>
-        </Button>
-
-        <Button onPress={() => navigation.navigate('Lobby')}>
-          <IconContainer>
-            <ImageIcon source={require('../../assets/img/arrows.png')}/>
-          </IconContainer>
-          <ButtonText>voltar</ButtonText>
-        </Button>
+        <Button 
+          route="Online" 
+          icon={<ImageIcon source={require(`../../assets/img/wifi.png`)}/>} 
+          text="online" 
+          navigation={navigation}
+        />
+        <Button 
+          route="Board" 
+          icon={<ImageIcon source={require(`../../assets/img/location.png`)}/>} 
+          text="local" 
+          navigation={navigation}
+          params={{singlePlayer: false, online: false}} 
+        />
+        <Button 
+          route="Lobby" 
+          icon={<ImageIcon source={require(`../../assets/img/arrows.png`)}/>} 
+          text="voltar"
+          navigation={navigation} 
+        />
 
       </Container>
     </Wrapper>
