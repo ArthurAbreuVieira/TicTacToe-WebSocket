@@ -1,4 +1,7 @@
 import React from 'react';
+import { Dimensions } from 'react-native';
+
+import { LinearGradient } from 'expo-linear-gradient';
 
 import { 
   Wrapper,
@@ -11,6 +14,15 @@ import Button from '../../components/Button';
 export default function Lobby({ navigation }) {
   return (
     <Wrapper>
+      <LinearGradient 
+          colors={['#00ff95', '#0091ff']}
+          style={{
+            position: 'absolute',
+            flex: 1,
+            width:'100%',
+            height: Dimensions.get('window').height,
+          }}
+      />
       <Container>
 
         <Button 
