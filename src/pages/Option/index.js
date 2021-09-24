@@ -1,48 +1,40 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
-
-import { LinearGradient } from 'expo-linear-gradient';
 
 import { 
   Wrapper,
   Container,
-  ImageIcon
 } from '../../assets/styles';
 
 import Button from '../../components/Button';
 
 export default function Lobby({ navigation }) {
   return (
-    <Wrapper>
-      <LinearGradient 
-          colors={['#00ff95', '#0091ff']}
-          style={{
-            position: 'absolute',
-            flex: 1,
-            width:'100%',
-            height: Dimensions.get('window').height,
-          }}
-      />
+    <Wrapper color='#303030'>
+
       <Container>
 
         <Button 
           route="Online" 
-          icon={<ImageIcon source={require(`../../assets/img/wifi.png`)}/>} 
-          text="online" 
+          text="ONLINE" 
           navigation={navigation}
+          textColor='#fff'
+          color="#f44e66"
         />
         <Button 
           route="Board" 
-          icon={<ImageIcon source={require(`../../assets/img/location.png`)}/>} 
-          text="local" 
+          text="LOCAL" 
           navigation={navigation}
           params={{singlePlayer: false, online: false}} 
+          textColor='#fff'
+          color="#0091ff"
         />
         <Button 
           route="Lobby" 
-          icon={<ImageIcon source={require(`../../assets/img/arrows.png`)}/>} 
-          text="voltar"
+          text="VOLTAR"
           navigation={navigation} 
+          textColor='#fff'
+          color="#303030"
+          border="#0091ff"
         />
 
       </Container>

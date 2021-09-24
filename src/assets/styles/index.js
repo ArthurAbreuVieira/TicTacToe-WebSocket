@@ -24,31 +24,33 @@ export const Title = styled.Text`
 
 export const Button = styled.TouchableOpacity`
   /* background-color: #383e6e; */
-  background-color: ${props => props.color || "rgb(49, 49, 49)"};
+  background-color: ${props => props.color || "rgb(255, 255, 255)"};
   width: 90%;
-  height: 80px;
-  border-radius: 10px;
-  padding-left: ${({ padding }) => padding || "20px"};
+  height: 55px;
+  border-radius: 50px;
+  /* padding-left: ${({ padding }) => padding || "20px"}; */
   margin-bottom: 20px;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
+  justify-content: center;
   align-items: center;
   flex-direction: row;
-  border: 4px solid rgba(0,0,0,0.4);
+  border: 1px solid ${props => props.border || 'rgba(0,0,0,0.15)'};
 `;
 
 export const ButtonText = styled.Text`
   /* color: rgba(0, 0, 0, .4); */
-  color: #fff;
-  text-shadow: 0 0 10px #000;
-  font-size: 30px;
+  color: ${props => props.color || "black"};
+  font-size: 20px;
   font-weight: 700;
-  margin-left: ${({ margin }) => margin || "20px"};
+  /* margin-left: ${({ margin }) => margin || "20px"}; */
+  text-shadow: 0 0 8px black;
 `;
 
 export const IconContainer = styled.View`
-  width: 55px;
-  height: 55px;
-  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 23px;
   background-color: rgba(0, 0, 0, .4);
   justify-content: center;
   align-items: center;

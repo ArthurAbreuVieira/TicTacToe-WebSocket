@@ -1,43 +1,32 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
-
-import { LinearGradient } from 'expo-linear-gradient';
 
 import {
   Wrapper,
   Container,
-  ImageIcon
 } from '../../assets/styles';
 
 import Button from '../../components/Button';
 
 export default function Lobby({ navigation }) {
   return (
-    <Wrapper>
-      <LinearGradient 
-          colors={['#00ff95', '#0091ff']}
-          style={{
-            position: 'absolute',
-            flex: 1,
-            width:'100%',
-            height: Dimensions.get('window').height,
-          }}
-      />
+    <Wrapper color='#303030'>
       <Container>
 
         <Button
           route="Board"
-          icon={<ImageIcon source={require(`../../assets/img/gamepad.png`)} />}
-          text="singleplayer"
+          text="SINGLEPLAYER"
           navigation={navigation}
           params={{ singlePlayer: true }}
+          textColor='#fff'
+          color="#0091ff"
         />
 
         <Button
           route="Option"
-          icon={<ImageIcon source={require(`../../assets/img/network.png`)} />}
-          text="multiplayer"
+          text="MULTIPLAYER"
           navigation={navigation}
+          textColor='#fff'
+          color="#f44e66"
         />
 
       </Container>
