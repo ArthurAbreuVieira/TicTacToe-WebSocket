@@ -75,7 +75,11 @@ export default function ({ navigation }) {
   
   return (
     <>
-    <LookingModal visible={looking} back={() => backScreen(navigation, ws)} />
+    <LookingModal 
+      visible={looking} 
+      back={() => backScreen(navigation, ws)} 
+      navigation={navigation}
+    />
     <ClosedConn visible={!conn} back={() => backScreen(navigation, ws)} />
     <Board
       navigation={navigation}

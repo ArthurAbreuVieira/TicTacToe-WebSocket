@@ -17,7 +17,7 @@ export default function ({
   text, 
   textColor, 
   params = {}, 
-  navigation 
+  navigation
 }) {
   return (
     <Button color={color || "#fff"} border={border || 'rgba(0,0,0,0.15)'} onPress={() => navigation.navigate(route, params)}>

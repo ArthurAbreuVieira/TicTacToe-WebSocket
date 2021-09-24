@@ -1,9 +1,11 @@
 import React from 'react';
 import { Modal, Image, View } from 'react-native';
 
-import { Wrapper, Title, Button, ButtonText } from '../assets/styles';
+import { Wrapper, Title, ButtonText } from '../assets/styles';
 
-export default function LookingModal({ visible, back }) {
+import Button from './Button';
+
+export default function LookingModal({ visible, back, navigation }) {
   return (
     <Modal
       animationType="slide"
@@ -11,16 +13,20 @@ export default function LookingModal({ visible, back }) {
       visible={visible}
       overFullScreen
     >
-      <Wrapper style={{ justifyContent: "space-between" }}>
+      <Wrapper style={{ justifyContent: "space-between" }} color="#05040f">
         <Title>Procurando adversário</Title>
-        <Image source={require('../assets/img/loader2.gif')} style={{ width: 150, height: 150 }} />
-        <Button padding="0px" color="rgba(0, 153, 255, .8)" style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-        }} onPress={() => back()}>
-          <ButtonText margin="0px">Voltar</ButtonText>
-        </Button>
+        <Image source={require('../assets/img/looking.gif')} style={{ width: 400, height: 400 }} />
+        <Button 
+          route="Lobby" 
+          text="VOLTAR"
+          navigation={navigation} 
+          textColor='#fff'
+          color="#0f0d21"
+          border="#5634cb"
+        />
       </Wrapper>
     </Modal>
   );
 }
+
+
