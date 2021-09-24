@@ -17,10 +17,18 @@ export default function ({
   text, 
   textColor, 
   params = {}, 
-  navigation
+  navigation,
+  width,
+  height
 }) {
   return (
-    <Button color={color || "#fff"} border={border || 'rgba(0,0,0,0.15)'} onPress={() => navigation.navigate(route, params)}>
+    <Button 
+      color={color || "#fff"} 
+      border={border || 'rgba(0,0,0,0.15)'} 
+      onPress={() => navigation.navigate(route, params)}
+      width={width || '90%'}
+      height={height || '55px'}
+    >
       {gradient &&
         <LinearGradient
           colors={gradient}

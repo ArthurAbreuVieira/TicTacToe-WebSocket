@@ -25,8 +25,8 @@ export const Title = styled.Text`
 export const Button = styled.TouchableOpacity`
   /* background-color: #383e6e; */
   background-color: ${props => props.color || "rgb(255, 255, 255)"};
-  width: 90%;
-  height: 55px;
+  width: ${({ width }) => width || '90%'};
+  height: ${({ height }) => height || '55px'};
   border-radius: 50px;
   /* padding-left: ${({ padding }) => padding || "20px"}; */
   margin-bottom: 20px;
@@ -64,20 +64,24 @@ export const ImageIcon = styled.Image`
 export const BoardContainer = styled.View`
   flex: 1;
   align-items: center;
-  background-color: rgb(15, 15, 15);
-  justify-content: space-around;
+  background-color: #303030;
+  justify-content: space-between;
   align-items: center;
 `;
 
 export const PlayersContainer = styled.View`
   width: 100%;
+  background-color: #121212;
+  border-bottom-left-radius: 25;
+  border-bottom-right-radius: 25;
 `;
 
 export const Player = styled.View`
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: ${({ size }) => size || "90px"};
-  height: ${({ size }) => size || "90px"};
+  width: 100%;
+  /* margin-bottom: 50px; */
+  margin-top: 10px;
 `;
 
 export const PlayerIcon = styled.View`
@@ -90,10 +94,11 @@ export const PlayerIcon = styled.View`
 `;
 
 export const Board = styled.View`
-  width: 100%;
-  height: 330px;
+  width: 301px;
+  height: 301px;
   justify-content: center;
   align-items: center;
+  border: 1px solid ${props => props.border};;
 `;
 
 export const Row = styled.View`
@@ -104,11 +109,6 @@ export const Square = styled.TouchableOpacity`
   width: 100px;
   height: 100px;
   background-color: ${({ bg }) => bg || "rgba(0, 0, 0, .3)"};
-  border: 1px solid gray;
-  /* margin-left: ${({ margin_left }) => margin_left || "0px"};
-  margin-right: ${({ margin_right }) => margin_right || "0px"}; */
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
   justify-content: center;
   align-items: center;
 `;
@@ -130,7 +130,7 @@ export const WinnerContainer = styled.View`
 
 export const BackButtonContainer = styled.TouchableOpacity`
   flex-direction:row;
-  justify-content:flex-start;
+  justify-content:flex-end;
   align-items:center;
   width:90%;
 `;

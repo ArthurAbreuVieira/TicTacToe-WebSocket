@@ -17,19 +17,19 @@ export default function ({ route, navigation }) {
   const [gameEnd, setGameEnd] = useState(false);
   const [board, setBoard] = useState([
     [
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
+      { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .6)' },
+      { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .3)' },
+      { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .6)' }
     ],
     [
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
+      { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .3)' },
+      { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .6)' },
+      { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .3)' }
     ],
     [
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' },
-      { color: 'green', value: '', bg: 'rgba(0, 0, 0, .3)' }
+      { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .6)' },
+      { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .3)' },
+      { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .6)' }
     ]
   ]);
   

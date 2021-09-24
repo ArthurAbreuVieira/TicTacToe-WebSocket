@@ -3,9 +3,11 @@ import { Modal } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 
-import { Wrapper, Title, WinnerContainer, Button, ButtonText } from '../assets/styles';
+import { Wrapper, Title, WinnerContainer, ButtonText } from '../assets/styles';
 
-export default function LocalWinner({ visible, back, winner }) {
+import Button from './Button';
+
+export default function LocalWinner({ visible, winner, navigation }) {
   return (
     <Modal
       animationType="slide"
@@ -15,14 +17,16 @@ export default function LocalWinner({ visible, back, winner }) {
       <Wrapper color="rgba(0,0,0,.5)">
         <WinnerContainer>
           <Title>Ganhador:</Title>
-          <FontAwesome name={winner === "Player 1" ? "close" : "circle-o"} size={150} color={winner === "Player 1" ? "rgb(0,255,0)" : "rgb(255,0,0)"} />
+          <FontAwesome name={winner === "Player 1" ? "close" : "circle-o"} size={150} color={winner === "Player 1" ? "#88e439" : "#ff3049"} />
         </WinnerContainer>
-        <Button padding="0px" color="rgba(0, 153, 255, .8)" style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-        }} onPress={() => back()}>
-          <ButtonText margin="0px">Voltar</ButtonText>
-        </Button>
+        <Button 
+          route="Lobby" 
+          text="VOLTAR"
+          navigation={navigation} 
+          textColor='#fff'
+          color="#303030"
+          border="#0091ff"
+        />
       </Wrapper>
     </Modal>
   );

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Modal, Image } from 'react-native';
 
-import { Wrapper, Title, WinnerContainer, IconContainer, ImageIcon, Button, ButtonText } from '../assets/styles';
+import { Wrapper, Title, WinnerContainer, IconContainer, ImageIcon } from '../assets/styles';
 
-export default function WinnerModal({ visible, back }) {
+import Button from './Button';
+
+export default function WinnerModal({ visible, navigation }) {
   return (
     <Modal
       animationType="slide"
@@ -15,12 +17,14 @@ export default function WinnerModal({ visible, back }) {
           <Title>Você Ganhou!</Title>
           <ImageIcon size="150px" source={require('../assets/img/trophy.png')} />
         </WinnerContainer>
-        <Button padding="0px" color="rgba(0, 153, 255, .8)" style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-        }} onPress={() => back()}>
-          <ButtonText margin="0px">Voltar</ButtonText>
-        </Button>
+        <Button 
+          route="Lobby" 
+          text="VOLTAR"
+          navigation={navigation} 
+          textColor='#fff'
+          color="#303030"
+          border="#0091ff"
+        />
       </Wrapper>
     </Modal>
   );

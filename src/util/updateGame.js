@@ -17,7 +17,7 @@ export default function updateGame(
   if (board[row][column].value === '') {
     const newBoard = [...board];
     newBoard[row][column].value = turn;
-    newBoard[row][column].color = turn === 'close' ? 'green' : 'red';
+    newBoard[row][column].color = turn === 'close' ? '#88e439' : '#ff3049';
     setBoard(newBoard);
     const newTurn = turn === 'close' ? 'circle-o' : 'close';
     setTurn(turn === 'close' ? 'circle-o' : 'close');

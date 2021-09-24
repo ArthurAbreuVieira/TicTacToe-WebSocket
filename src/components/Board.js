@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -8,6 +7,7 @@ import backScreen from '../util/backScreen';
 import WinnerModal from './WinnerModal';
 import LoserModal from './LoserModal';
 import LocalWinner from './LocalWinner';
+import Button from './Button';
 
 import {
   BoardContainer,
@@ -17,9 +17,8 @@ import {
   Row,
   Square,
   Title,
-  IconContainer,
-  ImageIcon,
-  BackButtonContainer
+  BackButtonContainer,
+  Container
 } from '../assets/styles';
 
 export default function ({
@@ -67,96 +66,79 @@ export default function ({
 
   return (
     <BoardContainer>
-      <BackButtonContainer onPress={() => backScreen(navigation, ws)}>
-        <IconContainer 
-          style={{
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            alignItems: "center"
-          }}
-        >
-          <ImageIcon 
-            size="30px" 
-            source={require('../assets/img/arrows.png')}
-          />
-          <Title size="20px" color="cyan">Sair</Title>
-        </IconContainer>
-      </BackButtonContainer>
 
       {singlePlayer && <>
-        <WinnerModal 
-          visible={winner === "Player 1" ? true : false} 
-          back={() => backScreen(navigation)}
+        <WinnerModal
+          visible={winner === "Player 1" ? true : false}
+          navigation={navigation}
         />
-        <LoserModal 
+        <LoserModal
           visible={winner === "Player 2" ? true : false}
-          back={() => backScreen(navigation)}
+          navigation={navigation}
         />
       </>}
 
       {online && <>
-        <WinnerModal 
-          visible={winner === me ? true : false} 
-          back={() => backScreen(navigation, ws)} 
+        <WinnerModal
+          visible={winner === me ? true : false}
+          navigation={navigation}
         />
-        {loser && 
-          <LoserModal 
-            visible={winner !== me ? true : false} 
-            back={() => backScreen(navigation, ws)} 
+        {loser &&
+          <LoserModal
+            visible={winner !== me ? true : false}
+            navigation={navigation}
           />
         }
       </>}
 
       {(!singlePlayer && !online) &&
-        <LocalWinner 
-          visible={winner !== false ? true : false} 
-          back={() => backScreen(navigation)} 
-          winner={winner} 
+        <LocalWinner
+          visible={winner !== false ? true : false}
+          navigation={navigation}
+          winner={winner}
         />
       }
 
-      {singlePlayer &&
-        <Title>{player === 'Player 1' ? 'Sua vez:' : 'Vez do adversário:'}</Title>
-      }
-
-      {online &&
-        <Title>{player === me ? 'Sua vez:' : 'Vez do adversário:'}</Title>
-      }
-
-      {(!singlePlayer && !online) &&
-        <Title>Vez de:
-          <FontAwesome
-            name={player === 'Player 1' ? "close" : "circle-o"}
-            size={35}
-            color={player === "Player 1" ? "rgb(0,255,0)" : "rgb(255,0,0)"}
-          />
-        </Title>
-      }
-
       <PlayersContainer>
-        <View style={{
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-          alignItems: 'center',
-        }}>
+
+        {!singlePlayer && online &&
           <Player>
-            <FontAwesome
-              name="close"
-              size={turn === 'close' ? 100 : 70}
-              color={turn === 'close' ? 'rgba(0,255,0,1)' : 'rgba(0,255,0,.3)'}
-            />
-          </Player>
-          <Player>
-            <FontAwesome
-              name="circle-o"
-              size={turn === 'circle-o' ? 100 : 70}
-              color={turn === 'circle-o' ? 'rgba(255,0,0,1)' : 'rgba(255,0,0,.3)'}
-            />
-          </Player>
-        </View>
+            <Title size="20px">
+              VOCÊ: {<FontAwesome
+              name={me === "Player 1" ? 'close' : 'circle-o'}
+              size={20}
+              color={me === "Player 1" ? "#88e439" : "#ff3049"}
+            />}
+            </Title>
+
+            <Title size="20px">
+              ADVERSÁRIO: {<FontAwesome
+              name={me !== "Player 1" ? 'close' : 'circle-o'}
+              size={20}
+              color={me !== "Player 1" ? "#88e439" : "#ff3049"}
+            />}
+            </Title>
+          </Player>}
+
+        <Container style={{marginTop: 40}}>
+        {singlePlayer &&
+          <Title size="30px">{player === 'Player 1' ? 'SUA VEZ:' : 'VEZ DO ADVERSÁRIO:'}</Title>}
+
+        {online &&
+          <Title size="30px">{player === me ? 'SUA VEZ:' : 'VEZ DO ADVERSÁRIO:'}</Title>}
+
+        {(!singlePlayer && !online) &&
+          <Title size="40px">VEZ DE:</Title>}
+
+        <FontAwesome
+          name={player === 'Player 1' ? "close" : "circle-o"}
+          size={100}
+          color={player === "Player 1" ? "#88e439" : "#ff3049"}
+        />
+        </Container>
       </PlayersContainer>
 
-      <Board>
+      <Board border={player === "Player 1" ? "#88e439" : "#ff3049"}>
 
         <Row>
           <Square
@@ -241,6 +223,19 @@ export default function ({
         </Row>
 
       </Board>
+
+      <BackButtonContainer onPress={() => backScreen(navigation, ws)}>
+        <Button 
+          route="Lobby" 
+          text="SAIR"
+          navigation={navigation} 
+          textColor='#fff'
+          color="#0f0d21"
+          border="#5634cb"
+          width="150px"
+          height="40px"
+        />
+      </BackButtonContainer>
 
     </BoardContainer>
   );

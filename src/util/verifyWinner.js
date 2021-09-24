@@ -15,17 +15,17 @@ export default function verifyWinner(
   if (row0[0].value === 'close' && row0[1].value === 'close' && row0[2].value === 'close') {
     setTimeout(() => {
       const newBoard = [...board];
-      newBoard[0][0].bg = 'yellowgreen';
+      newBoard[0][0].bg = '#88e439';
       newBoard[0][0].color = 'white';
       setBoard(newBoard);
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[0][1].bg = 'yellowgreen';
+        newBoard[0][1].bg = '#88e439';
         newBoard[0][1].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[0][2].bg = 'yellowgreen';
+          newBoard[0][2].bg = '#88e439';
           newBoard[0][2].color = 'white';
           setBoard(newBoard);
         }, 300);
@@ -37,17 +37,17 @@ export default function verifyWinner(
   } else if (row1[0].value === 'close' && row1[1].value === 'close' && row1[2].value === 'close') {
     setTimeout(() => {
       const newBoard = [...board];
-      newBoard[1][0].bg = 'yellowgreen';
+      newBoard[1][0].bg = '#88e439';
       newBoard[1][0].color = 'white';
       setBoard(newBoard);
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[1][1].bg = 'yellowgreen';
+        newBoard[1][1].bg = '#88e439';
         newBoard[1][1].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[1][2].bg = 'yellowgreen';
+          newBoard[1][2].bg = '#88e439';
           newBoard[1][2].color = 'white';
           setBoard(newBoard);
         }, 300);
@@ -59,17 +59,17 @@ export default function verifyWinner(
   } else if (row2[0].value === 'close' && row2[1].value === 'close' && row2[2].value === 'close') {
     setTimeout(() => {
       const newBoard = [...board];
-      newBoard[2][0].bg = 'yellowgreen';
+      newBoard[2][0].bg = '#88e439';
       newBoard[2][0].color = 'white';
       setBoard(newBoard);
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[2][1].bg = 'yellowgreen';
+        newBoard[2][1].bg = '#88e439';
         newBoard[2][1].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[2][2].bg = 'yellowgreen';
+          newBoard[2][2].bg = '#88e439';
           newBoard[2][2].color = 'white';
           setBoard(newBoard);
         }, 300);
@@ -81,17 +81,17 @@ export default function verifyWinner(
   } else if (row0[0].value === 'close' && row1[0].value === 'close' && row2[0].value === 'close') {
     setTimeout(() => {
       const newBoard = [...board];
-      newBoard[0][0].bg = 'yellowgreen';
+      newBoard[0][0].bg = '#88e439';
       newBoard[0][0].color = 'white';
       setBoard(newBoard);
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[1][0].bg = 'yellowgreen';
+        newBoard[1][0].bg = '#88e439';
         newBoard[1][0].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[2][0].bg = 'yellowgreen';
+          newBoard[2][0].bg = '#88e439';
           newBoard[2][0].color = 'white';
           setBoard(newBoard);
         }, 300);
@@ -103,17 +103,17 @@ export default function verifyWinner(
   } else if (row0[1].value === 'close' && row1[1].value === 'close' && row2[1].value === 'close') {
     setTimeout(() => {
       const newBoard = [...board];
-      newBoard[0][1].bg = 'yellowgreen';
+      newBoard[0][1].bg = '#88e439';
       newBoard[0][1].color = 'white';
       setBoard(newBoard);
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[1][1].bg = 'yellowgreen';
+        newBoard[1][1].bg = '#88e439';
         newBoard[1][1].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[2][1].bg = 'yellowgreen';
+          newBoard[2][1].bg = '#88e439';
           newBoard[2][1].color = 'white';
           setBoard(newBoard);
         }, 300);
@@ -125,17 +125,17 @@ export default function verifyWinner(
   } else if (row0[2].value === 'close' && row1[2].value === 'close' && row2[2].value === 'close') {
     setTimeout(() => {
       const newBoard = [...board];
-      newBoard[0][2].bg = 'yellowgreen';
+      newBoard[0][2].bg = '#88e439';
       newBoard[0][2].color = 'white';
       setBoard(newBoard);
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[1][2].bg = 'yellowgreen';
+        newBoard[1][2].bg = '#88e439';
         newBoard[1][2].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[2][2].bg = 'yellowgreen';
+          newBoard[2][2].bg = '#88e439';
           newBoard[2][2].color = 'white';
           setBoard(newBoard);
         }, 300);
@@ -147,17 +147,17 @@ export default function verifyWinner(
   } else if (row0[0].value === 'close' && row1[1].value === 'close' && row2[2].value === 'close') {
     setTimeout(() => {
       const newBoard = [...board];
-      newBoard[0][0].bg = 'yellowgreen';
+      newBoard[0][0].bg = '#88e439';
       newBoard[0][0].color = 'white';
       setBoard(newBoard);
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[1][1].bg = 'yellowgreen';
+        newBoard[1][1].bg = '#88e439';
         newBoard[1][1].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[2][2].bg = 'yellowgreen';
+          newBoard[2][2].bg = '#88e439';
           newBoard[2][2].color = 'white';
           setBoard(newBoard);
         }, 300);
@@ -169,17 +169,17 @@ export default function verifyWinner(
   } else if (row0[2].value === 'close' && row1[1].value === 'close' && row2[0].value === 'close') {
     setTimeout(() => {
       const newBoard = [...board];
-      newBoard[0][2].bg = 'yellowgreen';
+      newBoard[0][2].bg = '#88e439';
       newBoard[0][2].color = 'white';
       setBoard(newBoard);
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[1][1].bg = 'yellowgreen';
+        newBoard[1][1].bg = '#88e439';
         newBoard[1][1].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[2][0].bg = 'yellowgreen';
+          newBoard[2][0].bg = '#88e439';
           newBoard[2][0].color = 'white';
           setBoard(newBoard);
         }, 300);
@@ -192,17 +192,17 @@ export default function verifyWinner(
     if (row0[0].value === 'circle-o' && row0[1].value === 'circle-o' && row0[2].value === 'circle-o') {
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[0][0].bg = 'yellowgreen';
+        newBoard[0][0].bg = '#88e439';
         newBoard[0][0].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[0][1].bg = 'yellowgreen';
+          newBoard[0][1].bg = '#88e439';
           newBoard[0][1].color = 'white';
           setBoard(newBoard);
           setTimeout(() => {
             const newBoard = [...board];
-            newBoard[0][2].bg = 'yellowgreen';
+            newBoard[0][2].bg = '#88e439';
             newBoard[0][2].color = 'white';
             setBoard(newBoard);
           }, 300);
@@ -214,17 +214,17 @@ export default function verifyWinner(
     } else if (row1[0].value === 'circle-o' && row1[1].value === 'circle-o' && row1[2].value === 'circle-o') {
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[1][0].bg = 'yellowgreen';
+        newBoard[1][0].bg = '#88e439';
         newBoard[1][0].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[1][1].bg = 'yellowgreen';
+          newBoard[1][1].bg = '#88e439';
           newBoard[1][1].color = 'white';
           setBoard(newBoard);
           setTimeout(() => {
             const newBoard = [...board];
-            newBoard[1][2].bg = 'yellowgreen';
+            newBoard[1][2].bg = '#88e439';
             newBoard[1][2].color = 'white';
             setBoard(newBoard);
           }, 300);
@@ -236,17 +236,17 @@ export default function verifyWinner(
     } else if (row2[0].value === 'circle-o' && row2[1].value === 'circle-o' && row2[2].value === 'circle-o') {
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[2][0].bg = 'yellowgreen';
+        newBoard[2][0].bg = '#88e439';
         newBoard[2][0].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[2][1].bg = 'yellowgreen';
+          newBoard[2][1].bg = '#88e439';
           newBoard[2][1].color = 'white';
           setBoard(newBoard);
           setTimeout(() => {
             const newBoard = [...board];
-            newBoard[2][2].bg = 'yellowgreen';
+            newBoard[2][2].bg = '#88e439';
             newBoard[2][2].color = 'white';
             setBoard(newBoard);
           }, 300);
@@ -258,17 +258,17 @@ export default function verifyWinner(
     } else if (row0[0].value === 'circle-o' && row1[0].value === 'circle-o' && row2[0].value === 'circle-o') {
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[0][0].bg = 'yellowgreen';
+        newBoard[0][0].bg = '#88e439';
         newBoard[0][0].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[1][0].bg = 'yellowgreen';
+          newBoard[1][0].bg = '#88e439';
           newBoard[1][0].color = 'white';
           setBoard(newBoard);
           setTimeout(() => {
             const newBoard = [...board];
-            newBoard[2][0].bg = 'yellowgreen';
+            newBoard[2][0].bg = '#88e439';
             newBoard[2][0].color = 'white';
             setBoard(newBoard);
           }, 300);
@@ -280,17 +280,17 @@ export default function verifyWinner(
     } else if (row0[1].value === 'circle-o' && row1[1].value === 'circle-o' && row2[1].value === 'circle-o') {
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[0][1].bg = 'yellowgreen';
+        newBoard[0][1].bg = '#88e439';
         newBoard[0][1].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[1][1].bg = 'yellowgreen';
+          newBoard[1][1].bg = '#88e439';
           newBoard[1][1].color = 'white';
           setBoard(newBoard);
           setTimeout(() => {
             const newBoard = [...board];
-            newBoard[2][1].bg = 'yellowgreen';
+            newBoard[2][1].bg = '#88e439';
             newBoard[2][1].color = 'white';
             setBoard(newBoard);
           }, 300);
@@ -302,17 +302,17 @@ export default function verifyWinner(
     } else if (row0[2].value === 'circle-o' && row1[2].value === 'circle-o' && row2[2].value === 'circle-o') {
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[0][2].bg = 'yellowgreen';
+        newBoard[0][2].bg = '#88e439';
         newBoard[0][2].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[1][2].bg = 'yellowgreen';
+          newBoard[1][2].bg = '#88e439';
           newBoard[1][2].color = 'white';
           setBoard(newBoard);
           setTimeout(() => {
             const newBoard = [...board];
-            newBoard[2][2].bg = 'yellowgreen';
+            newBoard[2][2].bg = '#88e439';
             newBoard[2][2].color = 'white';
             setBoard(newBoard);
           }, 300);
@@ -324,17 +324,17 @@ export default function verifyWinner(
     } else if (row0[0].value === 'circle-o' && row1[1].value === 'circle-o' && row2[2].value === 'circle-o') {
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[0][0].bg = 'yellowgreen';
+        newBoard[0][0].bg = '#88e439';
         newBoard[0][0].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[1][1].bg = 'yellowgreen';
+          newBoard[1][1].bg = '#88e439';
           newBoard[1][1].color = 'white';
           setBoard(newBoard);
           setTimeout(() => {
             const newBoard = [...board];
-            newBoard[2][2].bg = 'yellowgreen';
+            newBoard[2][2].bg = '#88e439';
             newBoard[2][2].color = 'white';
             setBoard(newBoard);
           }, 300);
@@ -346,17 +346,17 @@ export default function verifyWinner(
     } else if (row0[2].value === 'circle-o' && row1[1].value === 'circle-o' && row2[0].value === 'circle-o') {
       setTimeout(() => {
         const newBoard = [...board];
-        newBoard[0][2].bg = 'yellowgreen';
+        newBoard[0][2].bg = '#88e439';
         newBoard[0][2].color = 'white';
         setBoard(newBoard);
         setTimeout(() => {
           const newBoard = [...board];
-          newBoard[1][1].bg = 'yellowgreen';
+          newBoard[1][1].bg = '#88e439';
           newBoard[1][1].color = 'white';
           setBoard(newBoard);
           setTimeout(() => {
             const newBoard = [...board];
-            newBoard[2][0].bg = 'yellowgreen';
+            newBoard[2][0].bg = '#88e439';
             newBoard[2][0].color = 'white';
             setBoard(newBoard);
           }, 300);
@@ -375,7 +375,7 @@ export default function verifyWinner(
       if (rowEmpty === 0) {
         board.map(row => {
           row.map(r => {
-            r.bg = 'red';
+            r.bg = '#ff3049';
             r.color = 'white';
             setGameEnd(true);
             setTimeout(() => setWinner("Player 2"), 1200);

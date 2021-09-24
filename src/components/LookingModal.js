@@ -1,11 +1,11 @@
 import React from 'react';
 import { Modal, Image, View } from 'react-native';
 
-import { Wrapper, Title, ButtonText } from '../assets/styles';
+import { Wrapper, Title } from '../assets/styles';
 
 import Button from './Button';
 
-export default function LookingModal({ visible, back, navigation }) {
+export default function LookingModal({ visible, navigation }) {
   return (
     <Modal
       animationType="slide"
