@@ -5,7 +5,7 @@ import { Wrapper, Title } from '../assets/styles';
 
 import Button from './Button';
 
-export default function LookingModal({ visible, navigation }) {
+export default function LookingModal({ visible, navigation, ws }) {
   return (
     <Modal
       animationType="slide"
@@ -23,6 +23,7 @@ export default function LookingModal({ visible, navigation }) {
           textColor='#fff'
           color="#0f0d21"
           border="#5634cb"
+          ws={ws}
         />
       </Wrapper>
     </Modal>

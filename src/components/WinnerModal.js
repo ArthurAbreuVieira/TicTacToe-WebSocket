@@ -5,7 +5,7 @@ import { Wrapper, Title, WinnerContainer, IconContainer, ImageIcon } from '../as
 
 import Button from './Button';
 
-export default function WinnerModal({ visible, navigation }) {
+export default function WinnerModal({ visible, navigation, ws }) {
   return (
     <Modal
       animationType="slide"
@@ -24,6 +24,7 @@ export default function WinnerModal({ visible, navigation }) {
           textColor='#fff'
           color="#303030"
           border="#0091ff"
+          ws={ws}
         />
       </Wrapper>
     </Modal>

@@ -5,7 +5,7 @@ import { Wrapper, Title, WinnerContainer, ImageIcon } from '../assets/styles';
 
 import Button from './Button';
 
-export default function LoserModal({ visible, navigation }) {
+export default function LoserModal({ visible, navigation, ws }) {
   return (
     <Modal
       animationType="slide"
@@ -24,6 +24,7 @@ export default function LoserModal({ visible, navigation }) {
           textColor='#fff'
           color="#303030"
           border="#0091ff"
+          ws={ws}
         />
       </Wrapper>
     </Modal>

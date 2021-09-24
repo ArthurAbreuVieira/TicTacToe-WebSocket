@@ -128,7 +128,7 @@ export const WinnerContainer = styled.View`
   align-items: center;
 `;
 
-export const BackButtonContainer = styled.TouchableOpacity`
+export const BackButtonContainer = styled.View`
   flex-direction:row;
   justify-content:flex-end;
   align-items:center;

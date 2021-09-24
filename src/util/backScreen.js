@@ -1,6 +1,6 @@
-export default function backScreen(navigation, ws = undefined) {
+export default function backScreen(route, navigation, params, ws = undefined) {
   if(ws !== undefined) {  
     ws.close();
   }
-  navigation.navigate('Lobby');
+  navigation.navigate(route, params);
 }

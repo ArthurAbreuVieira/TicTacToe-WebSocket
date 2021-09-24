@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -82,11 +83,13 @@ export default function ({
         <WinnerModal
           visible={winner === me ? true : false}
           navigation={navigation}
+          ws={ws}
         />
         {loser &&
           <LoserModal
             visible={winner !== me ? true : false}
             navigation={navigation}
+            ws={ws}
           />
         }
       </>}
@@ -103,7 +106,9 @@ export default function ({
 
         {!singlePlayer && online &&
           <Player>
-            <Title size="20px">
+            <Title size="20px"
+              style={styles.playerIndicator}
+            >
               VOCÊ: {<FontAwesome
               name={me === "Player 1" ? 'close' : 'circle-o'}
               size={20}
@@ -111,7 +116,9 @@ export default function ({
             />}
             </Title>
 
-            <Title size="20px">
+            <Title size="20px"
+            style={[styles.playerIndicator,{marginTop: 10}]}
+            >
               ADVERSÁRIO: {<FontAwesome
               name={me !== "Player 1" ? 'close' : 'circle-o'}
               size={20}
@@ -120,7 +127,7 @@ export default function ({
             </Title>
           </Player>}
 
-        <Container style={{marginTop: 40}}>
+        <Container style={{marginTop: 10}}>
         {singlePlayer &&
           <Title size="30px">{player === 'Player 1' ? 'SUA VEZ:' : 'VEZ DO ADVERSÁRIO:'}</Title>}
 
@@ -224,7 +231,7 @@ export default function ({
 
       </Board>
 
-      <BackButtonContainer onPress={() => backScreen(navigation, ws)}>
+      <BackButtonContainer>
         <Button 
           route="Lobby" 
           text="SAIR"
@@ -234,9 +241,24 @@ export default function ({
           border="#5634cb"
           width="150px"
           height="40px"
+          ws={ws}
         />
       </BackButtonContainer>
 
     </BoardContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  playerIndicator: {
+    justifyContent: "center",
+    alignItems: 'center',
+    borderWidth: .5,
+    borderRadius: 50,
+    borderStyle: "solid",
+    borderColor: '#5634cb',
+    backgroundColor: "#0f0d21",
+    padding: 6,
+    width: 200,
+  }
+});

@@ -2,6 +2,8 @@ import React from 'react';
 
 import { LinearGradient } from 'expo-linear-gradient';
 
+import backScreen from '../util/backScreen';
+
 import {
   Button,
   ButtonText,
@@ -19,13 +21,14 @@ export default function ({
   params = {}, 
   navigation,
   width,
-  height
+  height,
+  ws = undefined
 }) {
   return (
     <Button 
       color={color || "#fff"} 
       border={border || 'rgba(0,0,0,0.15)'} 
-      onPress={() => navigation.navigate(route, params)}
+      onPress={() => backScreen(route, navigation, params, ws)}
       width={width || '90%'}
       height={height || '55px'}
     >
