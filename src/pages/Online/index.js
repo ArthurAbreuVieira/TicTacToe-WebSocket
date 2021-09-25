@@ -80,11 +80,12 @@ export default function ({ navigation }) {
       navigation={navigation}
       ws={ws}
     />
+    {!gameEnd &&
     <ClosedConn 
       visible={!conn} 
       navigation={navigation}
       ws={ws}  
-    />
+    />}
     <Board
       navigation={navigation}
       singlePlayer={false}
