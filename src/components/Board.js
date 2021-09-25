@@ -6,6 +6,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import WinnerModal from './WinnerModal';
 import LoserModal from './LoserModal';
 import LocalWinner from './LocalWinner';
+import DrawModal from './DrawModal';
 import Button from './Button';
 
 import {
@@ -37,7 +38,8 @@ export default function ({
   board,
   setBoard,
   updateGame,
-  gameEnd
+  gameEnd,
+  draw
 }) {
   function handleUpdater(row, column) {
     updateGame(
@@ -65,6 +67,12 @@ export default function ({
 
   return (
     <BoardContainer>
+ 
+      <DrawModal
+          visible={draw}
+          navigation={navigation}
+          ws={ws}
+      />
 
       {singlePlayer && <>
         <WinnerModal

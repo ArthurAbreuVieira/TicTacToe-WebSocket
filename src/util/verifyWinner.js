@@ -4,7 +4,8 @@ export default function verifyWinner(
   setBoard, 
   setGameEnd, 
   setWinner, 
-  setLoser = false
+  setLoser = false,
+  setDraw
 ) {
   if (gameEnd) return;
   const row0 = board[0];
@@ -378,8 +379,7 @@ export default function verifyWinner(
             r.bg = '#ff3049';
             r.color = 'white';
             setGameEnd(true);
-            setTimeout(() => setWinner("Player 2"), 1200);
-            if(setLoser) setTimeout(() => setLoser(true), 1200);
+            setTimeout(() => setDraw(true), 500);
           });
         });
       }

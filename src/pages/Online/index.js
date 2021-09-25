@@ -28,6 +28,7 @@ export default function ({ navigation }) {
   const [player, setPlayer] = useState('');
   const [turn, setTurn] = useState(player === 'Player 1' ? 'close' : 'circle-o');
   const [gameEnd, setGameEnd] = useState(false);
+  const [draw, setDraw] = useState(false);
   const [board, setBoard] = useState([
     [
       { color: '#88e439', value: '', bg: 'rgba(0, 0, 0, .6)' },
@@ -69,7 +70,8 @@ export default function ({ navigation }) {
       setBoard,
       setGameEnd,
       setWinner,
-      setLoser
+      setLoser,
+      setDraw
     );
   }, [board]);
   
@@ -105,6 +107,7 @@ export default function ({ navigation }) {
       updateGame={updateGame}
       gameEnd={gameEnd}
       setGameEnd={setGameEnd}
+      draw={draw}
     />
     </>
   );
