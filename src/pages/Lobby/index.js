@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from 'react-native';
 
 import {
   Wrapper,
@@ -10,6 +11,7 @@ import Button from '../../components/Button';
 export default function Lobby({ navigation }) {
   return (
     <Wrapper color='#303030'>
+      <Image source={require('../../assets/img/logo.png')}/>
       <Container>
 
         <Button

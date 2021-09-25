@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from 'react-native';
 
 import { 
   Wrapper,
@@ -10,7 +11,7 @@ import Button from '../../components/Button';
 export default function Lobby({ navigation }) {
   return (
     <Wrapper color='#303030'>
-
+      <Image source={require('../../assets/img/logo.png')}/>
       <Container>
 
         <Button 
@@ -33,8 +34,8 @@ export default function Lobby({ navigation }) {
           text="VOLTAR"
           navigation={navigation} 
           textColor='#fff'
-          color="#303030"
-          border="#0091ff"
+          color="#0f0d21"
+          border="#5634cb"
         />
 
       </Container>

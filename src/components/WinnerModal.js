@@ -13,7 +13,7 @@ export default function WinnerModal({ visible, navigation, ws }) {
       visible={visible}
     >
       <Wrapper color="rgba(0,0,0,.5)">
-        <WinnerContainer>
+        <WinnerContainer border="#88e439aa">
           <Title>Você Ganhou!</Title>
           <ImageIcon size="150px" source={require("../assets/img/struck.png")} />
           <Button 
