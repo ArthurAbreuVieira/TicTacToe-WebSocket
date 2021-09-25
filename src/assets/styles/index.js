@@ -72,8 +72,8 @@ export const BoardContainer = styled.View`
 export const PlayersContainer = styled.View`
   width: 100%;
   background-color: #121212;
-  border-bottom-left-radius: 25;
-  border-bottom-right-radius: 25;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 `;
 
 export const Player = styled.View`

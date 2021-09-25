@@ -3,8 +3,6 @@ import { StyleSheet } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 
-import backScreen from '../util/backScreen';
-
 import WinnerModal from './WinnerModal';
 import LoserModal from './LoserModal';
 import LocalWinner from './LocalWinner';
@@ -117,13 +115,14 @@ export default function ({
             </Title>
 
             <Title size="20px"
-            style={[styles.playerIndicator,{marginTop: 10}]}
+              style={[styles.playerIndicator,{marginTop: 10}]}
             >
-              ADVERSÁRIO: {<FontAwesome
-              name={me !== "Player 1" ? 'close' : 'circle-o'}
-              size={20}
-              color={me !== "Player 1" ? "#88e439" : "#ff3049"}
-            />}
+              ADVERSÁRIO: {
+              <FontAwesome
+                name={me !== "Player 1" ? 'close' : 'circle-o'}
+                size={20}
+                color={me !== "Player 1" ? "#88e439" : "#ff3049"}
+              />}
             </Title>
           </Player>}
 

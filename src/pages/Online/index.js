@@ -80,7 +80,11 @@ export default function ({ navigation }) {
       navigation={navigation}
       ws={ws}
     />
-    <ClosedConn visible={!conn} back={() => backScreen(navigation, ws)} />
+    <ClosedConn 
+      visible={!conn} 
+      navigation={navigation}
+      ws={ws}  
+    />
     <Board
       navigation={navigation}
       singlePlayer={false}
