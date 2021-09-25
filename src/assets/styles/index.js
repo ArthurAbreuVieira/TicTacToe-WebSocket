@@ -122,10 +122,11 @@ export const Value = styled.Text`
 export const WinnerContainer = styled.View`
   width: 80%;
   height: 350px;
-  background-color: rgb(49, 49, 49);
+  background-color: #252525;
   border-radius: 20px;
   justify-content: space-evenly;
   align-items: center;
+  border: 1px solid ${props => props.border || 'rgba(0,0,0,0.15)'};
 `;
 
 export const BackButtonContainer = styled.View`

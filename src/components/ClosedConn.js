@@ -15,17 +15,17 @@ export default function ClosedConn({ visible, ws, navigation }) {
       <Wrapper color="rgba(0,0,0,.5)">
         <WinnerContainer>
           <Title>O adversário saiu da partida!</Title>
-          <ImageIcon size="150px" source={require('../assets/img/arrows.png')} />
+          <ImageIcon size="150px" source={require("../assets/img/scary.png")} />
+          <Button 
+            route="Lobby" 
+            text="VOLTAR"
+            navigation={navigation} 
+            textColor='#fff'
+            color="#0f0d21"
+            border="#5634cb"
+            ws={ws}
+          />
         </WinnerContainer>
-        <Button 
-          route="Lobby" 
-          text="VOLTAR"
-          navigation={navigation} 
-          textColor='#fff'
-          color="#303030"
-          border="#0091ff"
-          ws={ws}
-        />
       </Wrapper>
     </Modal>
   );
