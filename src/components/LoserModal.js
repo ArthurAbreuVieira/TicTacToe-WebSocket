@@ -17,7 +17,7 @@ export default function LoserModal({ visible, navigation, ws }) {
       <Wrapper color="rgba(0,0,0,.5)">
         <WinnerContainer border="#ff3049aa">
           <Title>Você Perdeu!</Title>
-          <ImageIcon size="150px" source={require("../assets/img/rage.png")} />
+          <ImageIcon size="150px" source={require("../assets/img/rage2.png")} />
           <Button 
               route="Lobby" 
               text="VOLTAR"
