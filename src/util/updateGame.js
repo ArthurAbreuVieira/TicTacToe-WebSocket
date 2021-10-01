@@ -11,7 +11,8 @@ export default function updateGame(
   online, 
   ws, 
   room, 
-  opponentConn
+  opponentConn,
+  myConn
 ) {
   if (gameEnd) return;
   if (board[row][column].value === '') {
@@ -24,16 +25,16 @@ export default function updateGame(
     const newPlayer = player === 'Player 1' ? 'Player 2' : 'Player 1';
     setPlayer(player === 'Player 1' ? 'Player 2' : 'Player 1');
     if (online) {
-      ws.send(JSON.stringify({
-        "type": "update_game",
-        "data": JSON.stringify({
-          "board": newBoard,
-          "player": newPlayer,
-          "turn": newTurn,
-          "room": room,
-          "to": opponentConn
-        })
-      }));
+      ws.emit("update_game", {
+        from: myConn,
+        to: opponentConn,
+        data: {
+          board: newBoard,
+          player: newPlayer,
+          turn: newTurn,
+          room: room
+        }
+      });
     }
   }
   return false;

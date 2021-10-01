@@ -14,11 +14,12 @@ import ClosedConn from '../../components/ClosedConn';
 export default function ({ navigation }) {
   
   AppState.addEventListener("change", () => {
-    backScreen(navigation, ws);
+    backScreen('Lobby', navigation, {},  ws);
   });
 
   const [ws, setWs] = useState(undefined);
   const [me, setMe] = useState(undefined);
+  const [myConn, setMyConn] = useState(undefined);
   const [room, setRoom] = useState(undefined);
   const [opponentConn, setOpponentConn] = useState(undefined);
   const [conn, setConn] = useState(true);
@@ -59,7 +60,7 @@ export default function ({ navigation }) {
       setMe,
       setOpponentConn,
       setRoom,
-      WebSocket
+      setMyConn
     );
   }, []);
 
@@ -95,6 +96,7 @@ export default function ({ navigation }) {
       ws={ws}
       room={room}
       me={me}
+      myConn={myConn}
       opponentConn={opponentConn}
       winner={winner}
       loser={loser}

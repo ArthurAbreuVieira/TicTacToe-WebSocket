@@ -1,6 +1,8 @@
+import io from 'socket.io-client';
+
 export default function WSConnect(
   setWs,
-  setPlayer, 
+  setPlayer,
   setTurn, 
   setLooking, 
   setBoard, 
@@ -8,27 +10,50 @@ export default function WSConnect(
   setMe, 
   setOpponentConn, 
   setRoom,
+  setMyConn
 ) {
-  const WS = new WebSocket("ws://192.168.100.56:8080");
-  WS.onmessage = msg => {
-    msg = JSON.parse(msg.data);
-    if (msg.type === 'connected') {
-      setRoom(msg.room);
-      let starter = msg.turn;
-      let initialPlayer = 'Player ' + starter;
-      setMe(msg.me == msg.player1 ? "Player 1" : "Player 2");
-      setOpponentConn(msg.me == msg.player1 ? msg.player2 : msg.player1);
-      setPlayer(initialPlayer);
-      setTurn('Player ' + starter === 'Player 1' ? 'close' : 'circle-o');
-      setLooking(false);
-    } else if (msg.type === "update_game") {
-      const game = JSON.parse(JSON.parse(msg.game));
-      setBoard(game.board);
-      setPlayer("Player " + game.turn);
-      setTurn('Player ' + game.turn === 'Player 1' ? 'close' : 'circle-o');
-    } else if (msg.type === "opponent_closed") {
-      setConn(false);
+  const socket = io("http://18.228.10.49:7811", { reconnection: false });
+  // const socket = io("http://192.168.100.56:7811", { reconnection: false });
+  socket.on('join', msg => {
+    const opponent = msg.opponent;
+    
+    let starter = msg.turn;
+    let initialPlayer = 'Player ' + starter;
+
+    setWs(socket);
+    setPlayer(initialPlayer);
+    setTurn(initialPlayer === 'Player 1' ? 'close' : 'circle-o');
+    setMe(msg.firstReceiver === true ? "Player 1" : "Player 2");
+    setOpponentConn(msg.sender);
+    setRoom(msg.room);
+    setConn(true);
+    setBoard(msg.board);
+    setMyConn(msg.opponent);
+    setLooking(false);
+    // alert("conectei");
+
+    if(msg.firstReceiver) {
+      msg.opponent = msg.sender;
+      msg.sender = opponent;
+      socket.emit("connect_second", {
+        room: msg.room,
+        player1: msg.player1,
+        player2: msg.player2,
+        sender: msg.sender,
+        opponent: msg.opponent,
+        turn: msg.turn,
+        board: msg.board
+      });
     }
-  }
-  setWs(WS);
+  });
+
+  socket.on("update_game", msg => {
+    setBoard(msg.board);
+    setPlayer(msg.player);
+    setTurn(msg.turn);
+  });
+
+  socket.on("disconnect", reason => {
+    setConn(false);
+  });
 }

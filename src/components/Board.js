@@ -28,6 +28,7 @@ export default function ({
   ws,
   room,
   me,
+  myConn,
   opponentConn,
   winner = false,
   loser = false,
@@ -54,7 +55,8 @@ export default function ({
       online,
       ws,
       room,
-      opponentConn
+      opponentConn,
+      myConn
     );
   }
 
