@@ -5,7 +5,7 @@ import { Wrapper, Title, WinnerContainer, ImageIcon } from '../assets/styles';
 
 import Button from './Button';
 
-export default function DrawModal({ visible, navigation, ws }) {
+export default function DrawModal({ visible, navigation, ws, gameData }) {
   return (
     <Modal
       animationType="slide"
@@ -24,6 +24,7 @@ export default function DrawModal({ visible, navigation, ws }) {
             color="#0f0d21"
             border="#5634cb"
             ws={ws}
+            gameData={gameData}
           />
         </WinnerContainer>
       </Wrapper>

@@ -5,7 +5,7 @@ import Button from './Button';
 
 import { Wrapper, Title, WinnerContainer, IconContainer, ImageIcon } from '../assets/styles';
 
-export default function ClosedConn({ visible, ws, navigation }) {
+export default function ClosedConn({ visible, ws, navigation, gameData }) {
   return (
     <Modal
       animationType="slide"
@@ -24,6 +24,7 @@ export default function ClosedConn({ visible, ws, navigation }) {
             color="#0f0d21"
             border="#5634cb"
             ws={ws}
+            gameData={gameData}
           />
         </WinnerContainer>
       </Wrapper>

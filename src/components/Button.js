@@ -22,13 +22,14 @@ export default function ({
   navigation,
   width,
   height,
-  ws = undefined
+  ws = undefined,
+  gameData = undefined
 }) {
   return (
     <Button 
       color={color || "#fff"} 
       border={border || 'rgba(0,0,0,0.15)'} 
-      onPress={() => backScreen(route, navigation, params, ws)}
+      onPress={() => backScreen(route, navigation, params, ws, gameData)}
       width={width || '90%'}
       height={height || '55px'}
     >

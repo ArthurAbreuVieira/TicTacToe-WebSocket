@@ -74,6 +74,10 @@ export default function ({
           visible={draw}
           navigation={navigation}
           ws={ws}
+          gameData={{
+            room,
+            opponentConn,
+          }}
       />
 
       {singlePlayer && <>
@@ -92,12 +96,20 @@ export default function ({
           visible={winner === me ? true : false}
           navigation={navigation}
           ws={ws}
+          gameData={{
+            room,
+            opponentConn,
+          }}
         />
         {loser &&
           <LoserModal
             visible={winner !== me ? true : false}
             navigation={navigation}
             ws={ws}
+            gameData={{
+              room,
+              opponentConn,
+            }}
           />
         }
       </>}
@@ -251,6 +263,10 @@ export default function ({
           width="150px"
           height="40px"
           ws={ws}
+          gameData={{
+            room,
+            opponentConn,
+          }}
         />
       </BackButtonContainer>
 

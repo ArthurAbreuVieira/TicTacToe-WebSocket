@@ -82,12 +82,20 @@ export default function ({ navigation }) {
       visible={looking}
       navigation={navigation}
       ws={ws}
+      gameData={{
+        room,
+        opponentConn,
+      }}
     />
     {!gameEnd &&
     <ClosedConn 
       visible={!conn} 
       navigation={navigation}
       ws={ws}  
+      gameData={{
+        room,
+        opponentConn,
+      }}
     />}
     <Board
       navigation={navigation}

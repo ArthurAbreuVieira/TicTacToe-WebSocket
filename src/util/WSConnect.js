@@ -12,15 +12,15 @@ export default function WSConnect(
   setRoom,
   setMyConn
 ) {
-  const socket = io("http://18.228.10.49:7811", { reconnection: false });
-  // const socket = io("http://192.168.100.56:7811", { reconnection: false });
+  const socket = io("http://18.228.10.49:7811", { reconnection: false }); //production
+  // const socket = io("http://192.168.100.56:7811", { reconnection: false }); //development
+  setWs(socket);
   socket.on('join', msg => {
     const opponent = msg.opponent;
     
     let starter = msg.turn;
     let initialPlayer = 'Player ' + starter;
 
-    setWs(socket);
     setPlayer(initialPlayer);
     setTurn(initialPlayer === 'Player 1' ? 'close' : 'circle-o');
     setMe(msg.firstReceiver === true ? "Player 1" : "Player 2");
@@ -30,7 +30,6 @@ export default function WSConnect(
     setBoard(msg.board);
     setMyConn(msg.opponent);
     setLooking(false);
-    // alert("conectei");
 
     if(msg.firstReceiver) {
       msg.opponent = msg.sender;
@@ -53,7 +52,10 @@ export default function WSConnect(
     setTurn(msg.turn);
   });
 
-  socket.on("disconnect", reason => {
+  socket.on("close_connection", () => {
     setConn(false);
   });
+
+
+
 }

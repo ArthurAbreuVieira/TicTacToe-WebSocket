@@ -1,6 +1,6 @@
-export default function backScreen(route, navigation, params, ws = undefined) {
+export default function backScreen(route, navigation, params, ws = undefined, gameData = undefined) {
   if(ws !== undefined) {  
-    ws.disconnect();
+    ws.emit("close_connection", gameData);
   }
   navigation.navigate(route, params);
 }

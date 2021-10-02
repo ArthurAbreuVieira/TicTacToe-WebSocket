@@ -1,3 +1,4 @@
+import { registerRootComponent } from 'expo';
 import React from 'react';
 import { Modal, Image, View } from 'react-native';
 
@@ -5,7 +6,7 @@ import { Wrapper, Title } from '../assets/styles';
 
 import Button from './Button';
 
-export default function LookingModal({ visible, navigation, ws }) {
+export default function LookingModal({ visible, navigation, ws, gameData }) {
   return (
     <Modal
       animationType="slide"
@@ -24,6 +25,7 @@ export default function LookingModal({ visible, navigation, ws }) {
           color="#0f0d21"
           border="#5634cb"
           ws={ws}
+          gameData={gameData}
         />
       </Wrapper>
     </Modal>
