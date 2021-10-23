@@ -1,4 +1,4 @@
-# TicTacToe-WebSocket
+# TicTacToe WebSocket ❎⭕
 ### TicTacToe é um jogo da velha com suporte a partidas multiplayer em tempo real utilizando Web Sockets.
 
 ### 📷 [Ver imagens do projeto](#imagens-do-projeto)
