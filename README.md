@@ -21,19 +21,9 @@
   <image src="./src/assets/examples/menu.png" width=300 />
   <image src="./src/assets/examples/online.png" width=300 />
   <image src="./src/assets/examples/_online.png" width=300 />
-</div>
-
-*************************
-
-<div style="display:flex">
   <image src="./src/assets/examples/singleplayer.png" width=300 />
   <image src="./src/assets/examples/winner2.png" width=300 />
   <image src="./src/assets/examples/winner.png" width=300 />
-</div>
-
-*************************
-
-<div style="display:flex">
   <image src="./src/assets/examples/loser.png" width=300 />
   <image src="./src/assets/examples/draw.png" width=300 />
   <image src="./src/assets/examples/connection_lost.png" width=300 />
